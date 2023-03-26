@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "webpack-template",
+  "version": "2.1.0",
+  "description": "CBA Webpack template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "author": "Starfish Team",
+  "license": "BSD",
+  "dependencies": {
+    "@splidejs/splide": "^4.0.7",
+    "chart.js": "^3.9.1",
+    "chartjs-plugin-datalabels": "^2.1.0",
+    "datatables.net": "^1.12.1",
+    "datatables.net-fixedcolumns": "^4.1.0",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.4",
+    "resumable-file-uploads": "^1.0.21",
+    "sweetalert2": "^11.4.29"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.9",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "es6-promise": "^4.2.8",
+    "laravel-mix": "^6.0.6",
+    "postcss": "^8.1.14",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "IE 11"
+  ]
+}

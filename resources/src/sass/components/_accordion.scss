@@ -1,0 +1,153 @@
+// -----------------------------------------------------------------------------
+// Accordion style
+// -----------------------------------------------------------------------------
+
+.accordionItem {
+    margin-bottom: 20px;
+
+    @include media-down(sp) {
+        margin-bottom: 10px;
+    }
+}
+
+.jsAccordionBox {
+    display: none;
+}
+
+.ques {
+    display: flex;
+    gap: 0 10px;
+    align-items: flex-end;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: $text-color;
+    cursor: pointer;
+    border: 1px solid $color-gray03;
+    padding: 15px 0 18px 20px;
+    position: relative;
+
+    @include media-down(sp) {
+        font-size: 1.2rem;
+        padding: 14px 0 14px 11px;
+    }
+
+    span {
+        &:first-child {
+            font-size: 2.4rem;
+            color: $color-bg01;
+            align-self: flex-start;
+
+            @include media-down(sp) {
+                font-size: 1.2rem;
+            }
+        }
+
+        &:last-child {
+            width: 90%;
+
+            @include media-down(sp) {
+                width: 80%;
+            }
+        }
+    }
+
+    &.active {
+        background-color: $color-gray07;
+
+        &::before {
+            transform: rotate(90deg) translateX(-50%) translateY(-50%);
+            transform-origin: top;
+            opacity: 0;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 19px;
+        height: 3px;
+        background-color: $color-gray10;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include media-down(sp) {
+            height: 2px;
+            width: 12px;
+            right: 12px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 19px;
+        background-color: $color-gray10;
+        right: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.4s;
+
+        @include media-down(sp) {
+            height: 12px;
+            width: 2px;
+            right: 17px;
+        }
+    }
+
+    .nonAccor & {
+        padding-right: 20px;
+        background-color: $color-gray01;
+        cursor: auto;
+
+        span:last-child {
+            width: 100% !important;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        @include media-down(sp) {
+        }
+    }
+}
+
+.ans {
+    display: flex;
+    gap: 0 18px;
+    align-items: flex-start;
+    font-size: 1.6rem;
+    line-height: calc(35 / 16);
+    color: $text-color;
+    padding: 17px 6px 17px 30px;
+
+    span {
+        &:first-child {
+            color: #E14D4D;
+            font-size: 2.4rem;
+            font-weight: bold;
+
+            @include media-down(sp) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .ansTxt {
+        margin-bottom: 35px;
+    }
+
+    @include media-down(sp) {
+        font-size: 1.2rem;
+        padding: 10px 6px 10px 15px;
+        gap: 0 14px;
+
+        .ansTxt {
+            margin-bottom: 20px;
+        }
+    }
+}

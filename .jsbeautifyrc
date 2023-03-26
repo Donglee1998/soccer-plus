@@ -1,0 +1,10 @@
+{
+  "indent_size": 4,
+  "indent_char": " ",
+  "js": {
+    "indent_size": 2
+  },
+  "indent_head_inner_html": false,
+  "indent_scripts": "keep",
+  "extra_liners": ["body"]
+}

@@ -1,0 +1,353 @@
+.blockChart {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: $color-gray10;
+
+    &__item {
+        display: flex;
+        justify-content: flex-end;
+        width: calc(50% - 15px);
+        background-color: $color-gray15;
+        padding-left: 20px;
+    }
+
+    @include media-down(sp) {
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 10px;
+
+        &__item {
+            width: 100%;
+            padding-left: 4px;
+
+            ~* {
+                margin-top: 20px;
+            }
+
+            canvas {
+                max-width: 610px;
+                max-height: 674px;
+            }
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    outline: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+
+    &__wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 800px;
+    }
+
+    &__content {
+        max-height: 90vh;
+        margin: auto;
+        padding: 30px;
+        background-color: $color-white;
+        border-radius: 10px;
+        overflow-y: auto;
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include media-down(sp) {
+        &__wrapper {
+            width: 90%;
+            max-width: 800px;
+        }
+
+        &__content {
+            padding: 22px 12px 12px;
+        }
+    }
+}
+
+.listResult {
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 3px;
+
+        span {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .result {
+            width: 29%;
+            background-color: $color-gray03;
+            font-size: 22px;
+            &.reset_color {
+                position: relative;
+                border-width: 6px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: -6px;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid $color-gray03;
+                    z-index: 1;
+                }
+            }
+            &.team1 {
+                border-left: 5px solid #5B2274;
+                &.reset_color {
+                    &::before {
+                        right: auto;
+                        left: -6px;
+                    }
+                }
+            }
+
+            &.team2 {
+                border-right: 5px solid #008136;
+            }
+        }
+
+        .ttl {
+            width: 42%;
+            color: $color-white;
+            background-color: $color-gray02;
+            font-size: 20px;
+        }
+    }
+
+    @include media-down(sp) {
+        &__item {
+            margin-bottom: 2px;
+
+            span {
+                padding: 10px;
+            }
+
+            .result {
+                font-size: 18px;
+
+                &.team1 {
+                    border-left-width: 3px;
+                }
+
+                &.team2 {
+                    border-right-width: 3px;
+                }
+            }
+
+            .ttl {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+#showVideo {
+    display: none;
+    &.show {
+        display: block;
+    }
+}
+
+.blockVideo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #2D2D2D;
+    text-align: center;
+    margin-bottom: 40px;
+
+    .timeVideo,
+    .btnDelete {
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        height: 99px;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #3A3A3A;
+        padding: 10px;
+        font-size: 14px;
+        color: $color-white;
+    }
+
+    .btnDelete {
+        background-color: #3A3A3A;
+        border: 0;
+        cursor: pointer;
+
+        svg {
+            font-size: 19px;
+            width: 1em;
+            height: 1em;
+        }
+
+        .txt {
+            display: block;
+            width: 100%;
+            margin-top: -24px;
+            color: $color-white;
+        }
+    }
+
+    .video {
+        position: relative;
+        width: calc(100% - 300px);
+        height: 0;
+        padding-top: 40.7%;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    video {
+        max-height: 440px;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    @include media-down(sp) {
+        .video {
+            width: 100%;
+            height: 0;
+            padding-top: 56.5%;
+        }
+
+        .timeVideo,
+        .btnDelete {
+            width: 50%;
+            height: auto;
+            padding: 10px;
+            order: 2;
+            border-top: 0;
+            font-size: 10px;
+        }
+
+        .btnDelete {
+            background-color: #3A3A3A;
+            border: 0;
+            cursor: pointer;
+
+            svg {
+                font-size: 14px;
+            }
+
+            .txt {
+                width: auto;
+                margin-top: 0;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.timeMatch {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    span {
+        display: inline-block;
+        color: $color-bg01;
+        margin-left: 5px;
+    }
+    @include media-down(sp) {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+}
+
+.editPlayVid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $color-gray03;
+    .item {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 20px);
+        font-size: 1.6rem;
+    }
+    .labelTxt {
+        min-width: 30%;
+    }
+    .cbCustom.style01 {
+        margin: 0;
+        @include media-up(sp) {
+            padding-left: 40px;
+            .checkmark {
+                width: 30px;
+                height: 30px;
+                top: -5px;
+                &:after {
+                    left: 12px;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    @include media-down(sp) {
+        gap: 20px 0px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        .item {
+            width: 100%;
+            font-size: 1.3rem;
+        }
+        .labelTxt {
+            min-width: 20%;
+        }
+    }
+
+}
+
+.ws-n {
+    white-space: nowrap;
+}
+
+.wb {
+    word-break: break-all;
+}
+
+.of-h {
+    overflow: hidden;
+    margin-bottom: 25px;
+    > * {
+        min-width: auto !important;
+        text-align: center;
+    }
+}

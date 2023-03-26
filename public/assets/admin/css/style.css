@@ -1,0 +1,592 @@
+@charset "UTF-8";
+
+/* ******************************************************************
+
+	--style.css--
+
+	1. Style setting
+		1-1. FontColor styles
+		1-2. Headline styles
+		1-3. Error styles
+		1-4. Table styles
+		1-5. Button styles
+		1-6. Pager styles
+
+	2. Layout setting
+		2-1. Base styles
+		2-2. Header styles
+		2-3. Navi styles
+		2-4. Breadcrumbs styles
+		2-5. Main styles
+		2-6. Side styles
+		2-7. Footer styles
+
+****************************************************************** */
+
+/*==================================================================
+	1. Style setting
+===================================================================*/
+
+/* ------------------------------------------------------------------
+	1-1. FontColor styles
+-------------------------------------------------------------------*/
+html { color:#333; }
+a:link, a:visited { color:#06C; }
+a:hover, a:active {
+	color:#F30;
+	text-decoration:none;
+}
+
+
+/* ------------------------------------------------------------------
+	1-2. Headline styles
+-------------------------------------------------------------------*/
+.headline {
+	position:relative;
+	margin-bottom:10px;
+	padding:8px;
+	border-radius:5px;
+	background:#006EDA;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #006EDA), color-stop(1, #0066CB));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #006EDA, #0066CB);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #006EDA, #0066CB);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #006EDA, #0066CB);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #006EDA, #0066CB);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #006EDA, #0066CB);/* IE 10+ */
+	color:#FFF;
+	font-weight:bold;
+	line-height:1;
+	text-shadow:0 1px 0 #145072;
+	behavior:url(/htc/PIE.php);
+}
+.headline a { color:#FFF; }
+.headline2 {
+	-webkit-box-shadow:1px 1px 3px #DDD, inset 0 0 0 1px #FFF;
+	box-shadow:1px 1px 3px #DDD, inset 0 0 0 1px #FFF;
+	margin-bottom:10px;
+	padding:7px 0 7px 7px;
+	border:1px solid #ddd;
+	background:#FFF;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #F3F3F3));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #FFF, #F3F3F3);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #FFF, #F3F3F3);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #FFF, #F3F3F3);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #FFF, #F3F3F3);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #FFF, #F3F3F3);/* IE 10+ */
+	font-weight:bold;
+	line-height:1;
+	behavior:url(/htc/PIE.php);
+}
+.headline2 span {
+	display:block;
+	padding-left:5px;
+	border-left:5px solid #0D54A4;
+	font-weight:bold;
+}
+.headline3 {
+	margin-bottom:10px;
+	padding:7px 7px 7px 5px;
+	background:#EEE;
+	line-height:1;
+}
+.headline3 span {
+	display:block;
+	padding-left:5px;
+	border-left:3px solid #0D54A4;
+	font-weight:bold;
+}
+.headline4 {
+	margin-bottom:10px;
+	padding-bottom:6px;
+	border-bottom:1px dashed #BBB;
+	font-weight:bold;
+	line-height:1;
+}
+.headlineSide {
+	-webkit-box-shadow:1px 1px 3px #DDD, inset 0 0 0 1px #FFF;
+	box-shadow:1px 1px 3px #DDD, inset 0 0 0 1px #FFF;
+	padding:7px 0 7px 7px;
+	border-bottom:1px solid #DDD;
+	background:#FFF;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #F3F3F3));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #FFF, #F3F3F3);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #FFF, #F3F3F3);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #FFF, #F3F3F3);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #FFF, #F3F3F3);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #FFF, #F3F3F3);/* IE 10+ */
+	font-weight:bold;
+	line-height:1;
+}
+.headlineSide span {
+	display:block;
+	padding-left:5px;
+	border-left:5px solid #0D54A4;
+	font-weight:bold;
+}
+
+
+/* ------------------------------------------------------------------
+	1-3. Error styles
+-------------------------------------------------------------------*/
+.error {
+	margin:0 auto 10px;
+	padding:8px 0;
+	background-color:#FFD3C3;
+}
+.error li {
+	padding-left:25px;
+	background:#FFD3C3 url(/assets/admin/img/common/icon_error.gif) no-repeat 10px .35em;
+	*background-position:10px .2em;
+	color:#F00;
+}
+.error input,
+.error textarea,
+.error select { background-color: #FFD3C3; }
+
+
+/* ------------------------------------------------------------------
+	1-4. Table styles
+-------------------------------------------------------------------*/
+
+/* Sheet styles
+-------------------------------------------------------------------*/
+.sheet {
+	width:447px;
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cells:show;
+}
+.sheet caption {
+	padding:8px 5px;
+	border-top:2px solid #06C;
+	border-bottom:none;
+	font-weight:bold;
+	text-align:left;
+}
+.sheet thead th {
+	width:auto;
+	padding:8px;
+	background-color: #CCC;
+	background-image:none;
+	font-weight:bold;
+	line-height:1;
+	text-align:left;
+}
+.sheet th, .sheet td {
+	padding:20px 15px;
+	border-top:1px solid #CCC;
+	border-bottom:1px solid #CCC;
+}
+.sheet th {
+	width:200px;
+	padding-left: 15px;
+	background:#EEE;
+	font-weight: bold;
+	text-align:right;
+}
+.sheet input[type="text"],
+.sheet input[type="password"],
+.sheet textarea {
+	width:80%;
+	padding:5px;
+	background:#F7F7F7;
+	font-size:100%;
+	font-weight:normal;
+}
+.sheet input[type="text"]:focus,
+textarea:focus { background-color:#FFF; }
+.sheet .caution {
+	display:block;
+	color:#C00;
+	font-size:11px;
+}
+
+
+/* ------------------------------------------------------------------
+	1-5. Button styles
+-------------------------------------------------------------------*/
+.button {
+	display:block;
+	-webkit-transition:background-color 0.15s ease-in-out;
+	-moz-transition:background-color 0.15s ease-in-out;
+	-o-transition:background-color 0.15s ease-in-out;
+	transition:background-color 0.15s ease-in-out;
+	width:178px;
+	height:44px;
+	margin-bottom:20px;
+	border-radius:5px;
+	font-weight:bold;
+	line-height:1;
+	text-align:center;
+	text-decoration:none;
+	outline:none;
+	cursor:pointer;
+	behavior:url(/htc/PIE.php);
+}
+.button.black {
+	border:1px solid #222;
+	background:#333;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #555), color-stop(1, #333));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #555, #333);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #555, #333);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #555, #333);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #555, #333);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #555, #333);/* IE 10+ */
+	color:#FFF;
+	text-shadow:0 -1px 1px #000;
+	behavior:url(/htc/PIE.php);
+}
+.button.black:hover { background:#555; }
+.button.blue {
+	border:1px solid #145072;
+	background:#2567AB;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #4E89C5), color-stop(1, #2567AB));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #4E89C5, #2567AB);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #4E89C5, #2567AB);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #4E89C5, #2567AB);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #4E89C5, #2567AB);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #4E89C5, #2567AB);/* IE 10+ */
+	color:#FFF;
+	text-shadow:0 -1px 1px #145072;
+	behavior:url(/htc/PIE.php);
+}
+.button.blue:hover { background:#4E89C5; }
+.button.yellow {
+	border:1px solid #F7C942;
+	background:#FADB4E;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FCEDA7), color-stop(1, #FADB4E));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #FCEDA7, #FADB4E);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #FCEDA7, #FADB4E);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #FCEDA7, #FADB4E);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #FCEDA7, #FADB4E);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #FCEDA7, #FADB4E);/* IE 10+ */
+	color:#111;
+	text-shadow:0 1px 1px #FFF;
+	behavior:url(/htc/PIE.php);
+}
+.button.yellow:hover { background:#FCEDA7; }
+.button.gray {
+	border:1px solid #CCC;
+	background:#F5F5F5;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #E6E6E6));/* Safari 4-5, Chrome 1-9, Android 1.6-3.0 */
+	background-image:-webkit-linear-gradient(top, #FFF, #E6E6E6);/* Safari 5.1+, iOS Safari 5.1+, Chrome 10+ */
+	background-image:-moz-linear-gradient(top, #FFF, #E6E6E6);/* Firefox 3.6+ */
+	background-image:-o-linear-gradient(top, #FFF, #E6E6E6);/* Opera 11.10+ */
+	-pie-background:linear-gradient(top, #FFF, #E6E6E6);/* IE 6-9 */
+	background-image:-ms-linear-gradient(top, #FFF, #E6E6E6);/* IE 10+ */
+	color:#111;
+	text-shadow:0 1px 1px #FFF;
+	behavior:url(/htc/PIE.php);
+}
+.button.gray:hover { background:#FAFAFA; }
+
+
+/* ------------------------------------------------------------------
+	1-6. Pager styles
+-------------------------------------------------------------------*/
+.pager {
+	margin:2em 0;
+	text-align:center;
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+	clear:both;
+}
+.pager li { display:inline; }
+.pager li a {
+	padding:5px 8px;
+	border:1px solid #DDD;
+	text-decoration:none;
+}
+.pager li a:hover {
+	border:1px solid #DBECFF;
+	background: #DBECFF;
+}
+.pager li strong {
+	border:1px solid #DDD;
+	padding:5px 8px;
+	background: #E7E7E7;
+	color: #999;
+	font-weight:bold;
+}
+
+
+/*==================================================================
+	2. Layout setting
+===================================================================*/
+
+/* ------------------------------------------------------------------
+	2-1. Base styles
+-------------------------------------------------------------------*/
+body {
+	padding-top:1px;
+	border-top:solid 3px #0093D8;
+}
+#container {
+	border-top:solid 1px #E3E3E3;
+}
+#contents {
+	position:relative;
+	width:980px;
+	margin:0 auto 20px;
+}
+#noScript {
+	width:938px;
+	margin:30px auto;
+	padding:20px;
+	border:1px solid #FF8282;
+	background:#FFE0E6;
+	font-weight:bold;
+	text-align:center;
+}
+
+
+/* ------------------------------------------------------------------
+	2-2. Header styles
+-------------------------------------------------------------------*/
+#header {
+	background:url(/assets/admin/img/common/bg_header.gif) repeat-x 0 100%;
+	margin-bottom:10px;
+}
+#header h1 {
+	position:absolute;
+	top:10px;
+	left:0px;
+	color:#999;
+	font-size:10px;
+}
+#headerInner {
+	position:relative;
+	width:980px;
+	height:128px;
+	margin:0 auto;
+}
+#logo {
+	display:block;
+	position:absolute;
+	top:35px;
+	left:0px;
+	width:145px;
+	height:25px;
+}
+
+
+/* ------------------------------------------------------------------
+	2-3. Navi styles
+-------------------------------------------------------------------*/
+#navi {
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+#navi li { float:left; }
+#navi li a {
+	display:block;
+	overflow:hidden;
+	width:196px;
+	height:0;
+	padding-top:40px;
+	background:#FFF url(/assets/admin/img/cybridge/navi.gif) no-repeat;
+	line-height:40px;
+}
+li#naviBusiness a { background-position:0 0; }
+li#naviCase a { background-position:-196px 0; }
+li#naviCorporation a { background-position:-392px 0; }
+li#naviRecruit a { background-position:-588px 0; }
+li#naviContact a {
+	background-position:-784px 0;
+	width:195px;
+}
+
+
+/* ------------------------------------------------------------------
+	2-4. Breadcrumbs styles
+-------------------------------------------------------------------*/
+.breadcrumbs {
+	width:980px;
+	margin:0 auto 10px;
+	padding:0px 0px 5px 0px;
+	background:#FFF url(/assets/admin/img/common/line_dot.gif) repeat-x 0% 100%;
+	color:#666;
+	font-size:10px;
+	line-height:1;
+}
+.breadcrumbs li { display:inline; }
+.breadcrumbs a:link,
+.breadcrumbs a:visited {
+	padding-right:10px;
+	background:url(/assets/admin/img/common/icon_breadcrumbs.gif) no-repeat 100% 50%;
+	color:#666;
+	text-decoration:none;
+}
+
+
+/* ------------------------------------------------------------------
+	2-5. Main styles
+-------------------------------------------------------------------*/
+#keyv {
+	width:978px;
+	height:300px;
+	margin:0 auto 20px;
+	border:1px solid #E3E3E3;
+	background:#FFF;
+}
+#flashContent {
+	width:978px;
+	height:300px;
+}
+#main {
+	float:left;
+	width:765px;
+}
+#main p { margin-bottom:18px; }
+#main .section { margin-bottom:40px; }
+#main .item { margin-bottom:30px; }
+#main .inner {
+	width:100%;
+	margin-bottom:20px;
+}
+#main .section .box {
+	padding:10px;
+	border:1px solid #ccc;
+}
+
+
+/* ------------------------------------------------------------------
+	2-6. Side styles
+-------------------------------------------------------------------*/
+#side {
+	float:right;
+	width:200px;
+	line-height:1.4;
+}
+#sideInner { padding:5px; }
+#side .section {
+	margin-bottom:8px;
+	border:1px solid #DCDCDD;
+	background:#FFF;
+}
+#side .item { padding:5px; }
+
+
+/* ------------------------------------------------------------------
+	2-7 Footer styles
+-------------------------------------------------------------------*/
+
+/*	PageTop styles
+-------------------------------------------------------------------*/
+#pageTop {
+	position:relative;
+	clear:both;
+	width:980px;
+	height:0;
+	margin:0 auto;
+}
+#pageTop a {
+	display:block;
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:106px;
+	height:23px;
+}
+
+/*	Footer styles
+-------------------------------------------------------------------*/
+#footer {
+	clear:both;
+	border-top:solid 3px #0093D8;
+}
+#footerNavi {
+	width:980px;
+	margin:0 auto;
+}
+#footerNavi li {
+	float:left;
+	padding:10px 0;
+}
+#footerNavi li a {
+	display:block;
+	overflow:hidden;
+	background:#FFF url(/assets/admin/img/cybridge/bg_footer_list.gif) no-repeat;
+	height:10px;
+	text-indent:-9999px;
+}
+#footerNavi #fnaviIr a { width:72px; }
+#footerNavi #fnaviPrivacy a {
+	width:102px;
+	background-position:0 -11px;
+}
+#footerNavi #fnaviContact a {
+	width:61px;
+	background-position:0 -22px;
+}
+#footerNavi #fnaviSitemap a {
+	width:61px;
+	background-position:0 -33px;
+}
+#footerInner {
+	clear:both;
+	border-top:solid 1px #E3E3E3;
+	background:url(/assets/admin/img/common/bg_footer.gif) repeat-x 0 100%;
+}
+#footerNavi li,
+#footerList li { margin:0 12px 4px 0; }
+#footer li a { color:#666; }
+#footer li a:hover,
+#footer li a:active { color:#888; }
+#footerList {
+	width:980px;
+	margin:0 auto;
+	padding:30px 0;
+	font-size:93%;
+}
+#footerList dl { float:left; }
+#footerList .solution { width:210px; }
+#footerList .media { width:325px; }
+#footerList .group { width:260px; }
+#footerList .social { width:180px; }
+#footerList .media dd { width:270px; }
+#footerList .media dd .mediaLeft {
+	float:left;
+	padding-right:20px;
+}
+#footerList .media dd .mediaRight { float:right; }
+#footerList li { margin-right:2px; }
+#footerList dt {
+	display:block;
+	overflow:hidden;
+	height:15px;
+	margin-bottom:15px;
+	background:#FFF url(/assets/admin/img/cybridge/bg_footer_dt.gif) no-repeat;
+	text-indent:-9999px;
+}
+#footerList .solution dt { width:144px; }
+#footerList .media dt {
+	width:79px;
+	background-position:0 -15px;
+}
+#footerList .group dt {
+	width:80px;
+	background-position:0 -30px;
+}
+#footerList .social dt {
+	width:117px;
+	background-position:0 -45px;
+}
+#footerBox {
+	width:980px;
+	margin:15px auto;
+	*padding-bottom:15px;
+}
+#footerBox .footerLogo {
+	display:block;
+	float:left;
+	width:287px;
+	height:34px;
+}
+#footerBox address {
+	display:block;
+	float:right;
+	width:607px;
+	height:28px;
+	margin-top:3px;
+}

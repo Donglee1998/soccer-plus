@@ -1,0 +1,1081 @@
+// -----------------------------------------------------------------------------
+// Form style
+// -----------------------------------------------------------------------------
+input[type=text], textarea {
+    font-size: 1.2rem;
+}
+
+input[type=text].formControl, textarea.formControl {
+    width: 100%;
+    height: 60px;
+    min-height: 60px;
+    padding: 15px 20px;
+    background-color: $color-gray04;
+    border: 1px solid $color-gray03;
+    font-size: 1.6rem;
+    outline: none;
+    border-radius: 2px;
+
+    &::placeholder {
+        color: $color-gray10;
+    }
+    @include media-down(sp) {
+        height: 40px;
+        min-height: 40px;
+        padding: 6px 12px;
+    }
+}
+.lableTxt {
+    font-size: 1.6rem;
+    font-weight: 500;
+    @include media-down(sp) {
+        font-size: 1.2rem;
+    }
+}
+.inputBox {
+    width: 100%;
+}
+.formWrapper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 400px;
+    font-family: 'Noto Sans JP', sans-serif;
+    &.w300 {
+        max-width: 300px;
+    }
+    .title {
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 2.4rem;
+        line-height: calc(32 / 24);
+        font-weight: bold;
+    }
+    .linkForgot {
+        display: inline-block;
+        margin-bottom: 60px;
+        color: #33338C;
+        font-size: 1.6rem;
+    }
+    .linkCancel {
+        display: inline-block;
+        margin-top: 25px;
+        font-size: 1.6rem;
+        color: $color-bg01;
+        font-weight: 500;
+    }
+    @include media-down(sp) {
+        max-width: 200px;
+        .title {
+            margin-bottom: 11px;
+            font-size: 1.2rem;
+        }
+        .linkForgot {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .linkCancel {
+            margin-top: 11px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.formGroup {
+    margin-bottom: 35px;
+    .txtLabel {
+        margin: 0 0 10px 0;
+        color: rgba($color: #666666, $alpha: 0.87);
+        font-size: 1.6rem;
+        line-height: calc(21 / 16);
+        font-weight: 500;
+    }
+    .styleInput {
+        width: 100%;
+        padding: 6px 10px;
+        height: 50px;
+        border: 1px solid $color-gray10;
+        border-radius: 4px;
+        outline: none;
+        font-size: 1.6rem;
+        &.error {
+            border-color: #CE2C35;
+            color: #333;
+        }
+        &.w300 {
+            width: 300px;
+            min-width: 300px;
+        }
+    }
+    .error {
+        display: block;
+    }
+    &.mb15 {
+        margin-bottom: 15px;
+    }
+    @include media-down(sp) {
+       margin-bottom: 20px;
+       .txtLabel {
+            font-size: 1.2rem;
+            line-height: calc(16 / 12);
+            margin-bottom: 6px;
+        }
+        .styleInput {
+            height: 35px;
+            border-radius: 2px;
+            font-size: 1.6rem;
+            &.w300 {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    }
+}
+
+.cbCustom {
+    display: block;
+    position: relative;
+    min-height: 20px;
+    width: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0 !important;
+        width: 0 !important;
+
+        &:checked {
+            ~.checkmark {
+                background-color: $color-green01;
+                border-color: $color-green01;
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: $color-white;
+        border: 1px solid $color-gray08;
+        border-radius: 3px;
+
+        &::after {
+            display: none;
+            position: absolute;
+            left: 7px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid $color-white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            content: '';
+        }
+    }
+
+    &.style01 {
+        display: inline-block;
+        width: auto;
+        padding-left: 34px;
+        font-size: 1.6rem;
+    }
+
+    @include media-up(sp) {
+        &.style01 {
+            .checkmark {
+                height: 26px;
+                width: 26px;
+
+                &::after {
+                    left: 9px;
+                    top: 3px;
+                    width: 7px;
+                    height: 14px;
+                    content: '';
+                }
+            }
+        }
+    }
+
+    @include media-down(sp) {
+        min-height: 18px;
+        width: 18px;
+
+        .checkmark {
+            height: 18px;
+            width: 18px;
+            border-radius: 2px;
+
+            &::after {
+                top: 2px;
+                left: 6px;
+            }
+        }
+
+        &.style01 {
+            padding-left: 24px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+select.formControl {
+    border: 1px solid $color-gray10;
+    padding: 10px;
+    font-size: 1.4rem;
+    background: $color-white url(/assets/img/svg/icon_select.svg) no-repeat right 10px top 50%;
+    appearance: none;
+    border-radius: 2px;
+    color: $text-color;
+    &:focus {
+        outline: none;
+    }
+    &.large {
+        @include media-up(sp) {
+            padding: 17px 20px;
+            font-size: 1.6rem;
+            background-size: 14px auto;
+        }
+    }
+}
+@include media-down(sp) {
+    select.formControl {
+        font-size: 1.2rem;
+    }
+}
+
+.cusInputDate {
+    input {
+        padding-left: 50px!important;
+        position: relative;
+        width: 100%;
+        background: $color-white url(/assets/img/svg/icon_calendar.svg) no-repeat left 20px top 50%;
+        outline: 0;
+
+        &[type="date"]::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            color: transparent;
+            cursor: pointer;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+
+        @include media-down(sp) {
+            padding-left: 30px !important;
+            background-size: 14px;
+            background-position: left 10px center;
+        }
+    }
+}
+
+.ctrCheckbox {
+    margin: 0;
+    cursor: pointer;
+    .checkmark {
+        position: relative;
+        padding-left: 30px;
+        font-size: 1.6rem;
+        line-height: calc(25 / 16);
+        color: $text-color;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            display: none;
+            width: 10px;
+            height: 8px;
+            background-image: url(/assets/img/svg/icon_check.svg);
+            background-size: 10px auto;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid $color-gray10;
+            background-color: $color-white;
+            transform: translateY(-50%);
+        }
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            ~.checkmark {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+    @include media-down(sp) {
+        .checkmark {
+            padding-left: 25px;
+            font-size: 1.2rem;
+            line-height: calc(25 / 24);
+            &::after {
+                width: 8px;
+                height: 6px;
+                background-size: 8px auto;
+            }
+            &::before {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.rbCustom {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    min-height: 26px;
+    padding-left: 32px;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            ~.checkmark {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 26px;
+        width: 26px;
+        border: 1px solid $color-gray08;
+        border-radius: 3px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &::after {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $text-color;
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @include media-down(sp) {
+        min-height: 20px;
+        padding-left: 25px;
+        font-size: 1.2rem;
+
+        .checkmark {
+            height: 20px;
+            width: 20px;
+
+            &::after {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+}
+.ckCustom {
+    @extend .rbCustom;
+    margin-left: 0 !important;
+    &Box {
+        padding-bottom: 10px;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        padding-right: 10px;
+        margin-left: 20px;
+        &.checkNote01 {
+            border-bottom-color: #FF6565;
+        }
+        &.checkNote02 {
+            border-bottom-color: #37B7F0;
+        }
+        &.checkNote03 {
+            border-bottom-color: #9BF237;
+        }
+        &.checkNote04 {
+            border-bottom-color: #CCCCCC;
+        }
+    }
+    .checkmark {
+        border-radius: 0;
+        @include media-up(sp) {
+            height: 24px;
+            width: 24px;
+        }
+
+        &::after {
+            width: 14px;
+            height: 14px;
+            background: url(/assets/img/svg/ic_checkbox.svg) no-repeat 50% 50%;
+        }
+    }
+}
+
+.blockSearch {
+    width: 100%;
+    height: 46px;
+    margin-bottom: 15px;
+    position: relative;
+    .search {
+        &Term {
+            width: 100%;
+            height: 100%;
+            padding: 10px 40px;
+            border-radius: 2px;
+            border-color: $color-gray10;
+            color: $text-color;
+            font-size: 1.6rem;
+            box-shadow: inset 0 1px 3px rgba($color: #000, $alpha: 0.1);
+            outline: none;
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+        &Btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+    @include media-down(sp) {
+        height: 40px;
+        margin-bottom: 10px;
+        .search {
+            &Term {
+                padding: 10px 30px;
+                font-size: 1.2rem;
+            }
+            &Btn {
+                width: 30px;
+                img {
+                    min-width: 13px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
+
+input.styleSelect {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px 10px 10px;
+    border-radius: 2px;
+    border-color: $color-gray10;
+    background: #FFF url(/assets/img/svg/icon_select.svg) no-repeat right 10px top 50%;
+    color: $text-color;
+    font-size: 1.6rem;
+    box-shadow: inset 0 1px 3px rgba($color: #000, $alpha: 0.1);
+    outline: none;
+    &::placeholder {
+        color: $text-color;
+    }
+    @include media-down(sp) {
+        font-size: 1.2rem;
+        padding: 7px 25px 7px 7px;
+        background-size: 9px;
+    }
+}
+
+.form {
+    overflow: hidden;
+
+    &.style01 {
+        > li {
+            &:first-child {
+                border-top: 1px solid $color-gray03;
+            }
+        }
+    }
+
+    > li {
+        padding: 20px 0;
+        border-bottom: 1px solid $color-gray03;
+    }
+
+    .formInput {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        >.ttl {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            width: 38%;
+            font-size: 1.6rem;
+            font-weight: 500;
+            padding-right: 20px;
+
+            .require {
+                margin-left: 10px;
+                padding: 4px 10px;
+                color: $color-white;
+                background-color: $color-red06;
+                font-size: 1.2rem;
+                border-radius: 2px;
+                white-space: nowrap;
+            }
+            .noRequire {
+                @extend .require;
+                background-color: #AAAAAA;
+            }
+
+            +.dFlex {
+                min-height: 60px;
+            }
+        }
+
+        input,
+        select,
+        textarea {
+            width: 62%;
+            min-height: 60px;
+            padding: 16px 20px;
+            background-color: $color-gray04;
+            border: 1px solid $color-gray03;
+            font-size: 1.6rem;
+            outline: none;
+
+            &::placeholder {
+                color: $color-gray10;
+            }
+        }
+
+        textarea {
+            min-height: 140px;
+        }
+
+        &.bg01 {
+            input, select, textarea {
+                background-color: $color-white;
+                box-shadow: 0px 1px 3px rgba($color: #000, $alpha: 0.1);
+            }
+        }
+    }
+
+    .err {
+        display: block;
+        width: 62%;
+        margin-left: auto;
+        color: $color-red06;
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+
+        +.formInput {
+            textarea,
+            .checkmark,
+            select,
+            input {
+                border-color: $color-red06;
+                background-color: $color-red07;
+            }
+
+            .cbCustom {
+                .checkmark {
+                    &::after {
+                        border-color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .listCheckBox {
+        width: 62%;
+
+        li {
+            width: calc(50% - 20px);
+            margin: 10px 10px;
+        }
+    }
+
+    .listRadio {
+        width: 62%;
+
+        .dFlex {
+            width: calc(100% + 45px);
+            margin: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 14px;
+            }
+
+            .ttl {
+                width: 45px;
+                font-size: 1.6rem;
+            }
+
+            .rbCustom {
+                width: calc(100% / 3 - 45px)
+            }
+        }
+    }
+
+    .dFlex {
+        width: calc(62% + 20px);
+        margin: 0 -10px;
+
+        .rbCustom,
+        .formControl {
+            width: calc(100% / 3 - 20px);
+            margin: 0 10px;
+        }
+
+        .formControl {
+            width: calc(100% / 3 - 24px);
+            min-height: 60px;
+            background-color: $color-gray04;
+        }
+        &.postalCode {
+            width: 62%;
+            margin: 0;
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+            }
+            input {
+                width: calc((100% - 35px) / 2);
+            }
+        }
+    }
+    &.setW {
+        @include media-up(sp) {
+            .err {
+                width: 77%;
+            }
+            .formInput {
+                >.ttl {
+                    width: 23%;
+                }
+
+                input,
+                select,
+                textarea {
+                    width: 77%;
+                }
+            }
+        }
+    }
+
+    @include media-down(912) {
+        .listCheckBox {
+            &.dFlex {
+                width: 62%;
+                margin: 0;
+            }
+
+            li {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        .dFlex {
+            .rbCustom,
+            .formControl {
+                width: calc(100% / 2 - 20px);
+                margin: 5px 10px;
+            }
+
+            .formControl {
+                width: calc(100% / 2 - 34px);
+            }
+            &.postalCode {
+                width: 100%;
+                span {
+                    width: 25px;
+                }
+                input {
+                    width: calc((100% - 25px) / 2);
+                }
+            }
+        }
+
+        .listRadio {
+            .dFlex {
+                .ttl {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                .rbCustom {
+                    width: calc(50% - 40px);
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    @include media-down(sp) {
+        > li {
+            padding: 18px 0;
+            position: relative;
+            padding-top: 43px;
+        }
+
+        .formInput {
+            margin-top: -25px;
+
+            >.ttl {
+                width: 100% !important;
+                margin-bottom: 10px;
+                padding-right: 0;
+                font-size: 1.4rem;
+
+                .require {
+                    padding: 3px 6px;
+                    font-size: 1rem;
+                    border-radius: 1px;
+                }
+
+                +.dFlex {
+                    min-height: 40px;
+                }
+            }
+
+            input,
+            select,
+            textarea {
+                width: 100%;
+                min-height: 40px;
+                padding: 7px 10px;
+
+                &::placeholder {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .err {
+            width: 100%;
+            font-size: 1rem;
+
+            +.formInput {
+                margin-top: 0;
+
+                >.ttl {
+                    position: absolute;
+                    top: 10px;
+                }
+            }
+        }
+
+        .listCheckBox {
+            &.dFlex {
+                width: 100%;
+            }
+
+            li {
+                margin: 6px 0;
+            }
+        }
+
+        .listRadio {
+            width: 100%;
+
+            .dFlex {
+                width: calc(100% + 45px);
+                margin: 0;
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                .ttl {
+                    width: 34px;
+                    margin: 0;
+                    font-size: 1.2rem;
+                }
+
+                .rbCustom {
+                    width: calc(100% / 3 - 45px);
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .dFlex {
+            width: calc(100% + 14px);
+            margin: 0 -7px;
+
+            .rbCustom,
+            .formControl {
+                width: calc(100% / 3 - 14px);
+                margin: 0 7px;
+                font-size: 1.2rem;
+            }
+
+            .formControl {
+                width: calc(100% / 3 - 24px);
+                min-height: 40px;
+            }
+        }
+    }
+}
+
+.confirmForm {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.6rem;
+
+    a {
+        display: inline-block;
+        color: $color-bg01;
+    }
+}
+
+.groupOption {
+    display: flex;
+
+    .rbCustom2 {
+        &:not(:first-child) {
+            border-left: 0;
+        }
+    }
+
+    .rbCustom2 {
+        &:first-child {
+            .checkmark {
+                border-radius: 2px 0 0 2px;
+            }
+        }
+
+        &:last-child {
+            .checkmark {
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+
+    @include media-down(sp) {
+        .rbCustom2 {
+            &:first-child {
+                .checkmark {
+                    border-radius: 1px 0 0 1px;
+                }
+            }
+    
+            &:last-child {
+                .checkmark {
+                    border-radius: 0 1px 1px 0;
+                }
+            }
+        }
+    }
+}
+
+.rbCustom2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            ~.checkmark {
+                color: $color-white;
+                background-color: $color-bg01;
+                border-color: $color-bg01;
+            }
+        }
+    }
+
+    .checkmark {
+        display: block;
+        padding: 8px 16px;
+        text-align: center;
+        border-top: 1px solid $color-gray08;
+        border-bottom: 1px solid $color-gray08;
+        border-left: 1px solid $color-gray08;
+    }
+
+    &:last-child {
+        .checkmark {
+            border-right: 1px solid $color-gray08;
+        }
+    }
+
+    @include media-down(sp) {
+        font-size: 1.3rem;
+
+        .checkmark {
+            display: block;
+            padding: 5px 5px;
+        }
+    }
+}
+
+.groupOptionFilter {
+    position: relative;
+    margin: -30px 0 30px;
+    .blockRadio {
+        display: flex;
+        width: calc(100% - 240px);
+        padding-right: 20px;
+        .scrollContent {
+            max-width: calc(100% - 75px);
+            overflow-x: auto;
+        }
+        .innerScroll {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .dFlex {
+            flex-wrap: nowrap;
+        }
+        &.resetW {
+            width: calc(100% - 120px);
+        }
+    }
+
+    .blockSelect {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        // justify-content: flex-end;
+    }
+
+    .blockRadio {
+        display: flex;
+        width: calc(100% - 240px);
+        padding-right: 20px;
+        .scrollContent {
+            max-width: calc(100% - 75px);
+            overflow-x: auto;
+        }
+        .innerScroll {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .dFlex {
+            flex-wrap: nowrap;
+        }
+        &.resetW {
+            width: calc(100% - 120px);
+        }
+    }
+
+    .blockSelect {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        // justify-content: flex-end;
+    }
+
+    .ttl {
+        margin: 15px 10px 0 0;
+        min-width: 75px;
+    }
+
+    .groupOption {
+        label {
+            margin: 0;
+        }
+    }
+
+    label {
+        margin: 10px 6px;
+    }
+
+    @include media-down(1120) {
+        margin: -10px 0 15px;
+    }
+
+    @include media-down(992) {
+        flex-direction: column;
+        .blockRadio {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 15px;
+            &.resetW {
+                width: 100%;
+            }
+        }
+        .blockSelect {
+            position: unset;
+        }
+    }
+
+    @include media-down(sp) {
+        margin: 0 0 20px;
+        .blockRadio {
+            .groupOption,
+            .dFlex {
+                margin-left: 0 !important;
+            }
+        }
+        .blockSelect {
+            position: unset;
+        }
+        .ttl {
+            margin-top: 8px;
+        }
+        label {
+            margin: 6px;
+        }
+    }
+}

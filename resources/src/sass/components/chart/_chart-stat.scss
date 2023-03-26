@@ -1,0 +1,297 @@
+// -----------------------------------------------------------------------------
+// Chart Stat
+// -----------------------------------------------------------------------------
+
+.chartStatMap1 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 650px;
+    height: 220px;
+    background-color: $color-gray05;
+
+    .coordinate {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: url(#{$base-url}img/svg/ic_cross.svg) no-repeat 50% 50%;
+        background-size: cover;
+    }
+
+    .boxLeft {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        width: 50%;
+        border-right: 1px solid $color-white;
+
+        &::after {
+            position: absolute;
+            left: -26%;
+            top: 75px;
+            transform: rotate(15deg);
+            height: 2px;
+            width: calc(100% + 153px);
+            background-color: $color-white;
+            content: "";
+        }
+
+        .posText1 {
+            position: absolute;
+            top: 15px;
+        }
+
+        .posText2 {
+            position: absolute;
+            left: 18%;
+            bottom: 59px;
+        }
+    }
+
+    .boxRight {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        width: 50%;
+        border-left: 1px solid $color-white;
+
+        &::after {
+            position: absolute;
+            right: -26%;
+            top: 75px;
+            transform: rotate(-15deg);
+            height: 2px;
+            width: calc(100% + 153px);
+            background-color: $color-white;
+            content: "";
+        }
+
+        .posText1 {
+            position: absolute;
+            top: 15px;
+        }
+
+        .posText2 {
+            position: absolute;
+            right: 18%;
+            bottom: 59px;
+        }
+    }
+
+    .chartStat1 {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .chartStat2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &.style01 {
+        height: 420px;
+        min-width: auto;
+        .chartStat2 {
+            width: 100%;
+            background-size: cover;
+        }
+    }
+}
+
+.chartStat1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 512px;
+    border: 10px solid $color-white;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    background-color: $color-white;
+
+    .boxItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+        padding: 11px 5px 12px;
+        border-left: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
+        background-color: $color-gray10;
+
+        &:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        &:nth-child(5) {
+            border-top-right-radius: 8px;
+        }
+
+        &.level1 {
+            background-color: $color-red01;
+        }
+
+        &.level2 {
+            background-color: $color-red02;
+        }
+
+        &.level3 {
+            background-color: $color-red03;
+        }
+
+        &.level4 {
+            background-color: $color-red04;
+        }
+
+        &.level5 {
+            background-color: $color-red05;
+        }
+
+    }
+}
+
+.chartStat2 {
+    position: relative;
+    background: url(#{$base-url}/img/common/bg_match_2.jpg) no-repeat 50% 50%;
+    width: 560px;
+    height: 100%;
+    background-size: contain;
+
+    .arrow {
+        position: absolute;
+        height: 2px;
+        background-color: $color-gray10;
+
+        &::before {
+            position: absolute;
+            left: -4px;
+            top: -2px;
+            width: 5.5px;
+            height: 5.5px;
+            border-radius: 5px;
+            background-color: $color-gray10;
+            content: "";
+        }
+
+        &::after {
+            position: absolute;
+            right: -6px;
+            top: -3px;
+            width: 9px;
+            height: 8px;
+            border-radius: 5px;
+            background: url(#{$base-url}/img/svg/icon_arrow_gray.svg) no-repeat 50% 50%;
+            background-size: 5px auto;
+            content: "";
+        }
+
+        &Red {
+            @extend .arrow;
+            background-color: #FF6565;
+
+            &::before {
+                background-color: #FF6565;
+            }
+
+            &::after {
+                background-image: url(#{$base-url}/img/svg/icon_arrow_red.svg);
+            }
+        }
+
+        &Blue {
+            @extend .arrow;
+            background-color: #37B9F2;
+
+            &::before {
+                background-color: #37B9F2;
+            }
+
+            &::after {
+                background-image: url(#{$base-url}/img/svg/icon_arrow_blue.svg);
+            }
+        }
+
+        &Green {
+            @extend .arrow;
+            background-color: #9BF237;
+
+            &::before {
+                background-color: #9BF237;
+            }
+
+            &::after {
+                background-image: url(#{$base-url}/img/svg/icon_arrow_green.svg);
+            }
+        }
+    }
+}
+
+.chartStatMap2 {
+    margin-bottom: 30px;
+    padding: 15px 15px 0;
+    background-color: #7a7a7a;
+
+    .wrap {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 37.6%;
+    }
+
+    .mapSvg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 1080px;
+        width: 100%;
+        height: 100%;
+
+        line {
+            stroke-width: 3px;
+        }
+
+        .gray {
+            stroke: #CCC;
+        }
+
+        .green {
+            stroke: #9BF237;
+        }
+
+        .blue {
+            stroke: #37B7F0;
+        }
+
+        .red {
+            stroke: #FF6565;
+        }
+    }
+
+    .imgGoal {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .imgMap {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@include media-down(sp) {
+    .chartStatMap2 {
+        .mapSvg {
+            line {
+                stroke-width: 2px;
+            }
+        }
+    }
+
+}

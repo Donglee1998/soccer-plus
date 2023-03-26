@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------------------
+// Chart Compare 2
+// -----------------------------------------------------------------------------
+.chartCompareBox {
+    width: 100%;
+    background-color: #ECECEC;
+    padding: 20px;
+    .infoBox {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0px;
+    }
+    .ttl {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #301C1C;
+        width: calc((100% - 160px) / 2);
+    }
+    .infoTeam {
+        display: flex;
+        align-items: center;
+        width: 160px;
+        padding: 0px 10px;
+        text-align: center;
+        font-size: 1.8rem;
+        .teamColor {
+            margin-right: 10px;
+            height: 20px;
+        }
+        .icon {
+            width: 18px;
+            min-width: 18px;
+            height: 20px;
+        }
+    }
+}
+.graphCompareBox {
+    display: flex;
+    justify-content: center;
+    .listTtl {
+        position: relative;
+        width: 160px;
+        padding: 10px;
+        background-color: #fff;
+        height: 340px;
+        top: 1px;
+        li {
+            margin: 0 0 16px 0;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+        }
+    }
+}
+
+.chartCompare2 {
+    width: calc((100% - 160px) / 2);
+    .graph {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 370px;
+        padding: 8px 0 0 4px;
+        background: url(#{$base-url}img/svg/bg_chart_compare_left.svg) no-repeat right 0 top 100%;
+        background-size: cover;
+
+        .item {
+            position: relative;
+            height: 20px;
+            margin-bottom: 10px;
+
+            .bar {
+                display: block;
+                position: absolute;
+                right: 5px;
+                top: 0;
+                background-color: $color-green02;
+                height: 100%;
+                color: $color-green02;
+            }
+            .num {
+                font-size: 1.8rem;
+                position: absolute;
+                top: 0;
+                left: -20px;
+                line-height: 1;
+            }
+        }
+
+        &.team2 {
+            background: url(#{$base-url}img/svg/bg_chart_compare_right.svg) no-repeat left 0 top 100%;
+            background-size: cover;
+            .item {
+                .bar {
+                    background-color: #555555;
+                    right: auto;
+                    left: 2px;
+                    color: #555555;
+                }
+                .num {
+                    left: auto;
+                    right: -20px;
+                }
+            }
+        }
+    }
+}

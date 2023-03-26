@@ -1,0 +1,222 @@
+// -----------------------------------------------------------------------------
+// Navi style
+// -----------------------------------------------------------------------------
+
+.hNavi {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-right: -15px;
+    li {
+        width: calc((100% / 4) - 15px);
+        margin-right: 15px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        padding: 15px;
+        font-size: 1.4rem;
+        color: #FFF;
+        z-index: 2;
+        overflow: hidden;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 1px;
+            top: 50%;
+            border-top: 31px solid transparent;
+            border-left: 26px solid #6666C9;
+            border-bottom: 31px solid transparent;
+            transform: translateY(-50%);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: calc(100% - 26px);
+            height: 100%;
+            border-radius: 5px 0px 0px 5px;
+            background-color: #6666C9;
+            z-index: -1;
+        }
+        &.active {
+            font-weight: bold;
+            &::after {
+                border-left-color: #33338C;
+            }
+            &::before {
+                background-color: #33338C;
+            }
+        }
+    }
+    @include media-down(sp) {
+        flex-wrap: wrap;
+        li {
+            width: calc((100% / 2) - 15px);
+            margin-bottom: 15px;
+            height: 48px;
+            font-size: 1.2rem;
+            &::before {
+                width: calc(100% - 20px);
+            }
+            &::after {
+                border-top-width: 25px;
+                border-left-width: 20px;
+                border-bottom-width: 25px;
+            }
+        }
+    }
+}
+
+#main-navi {
+    margin-top: 60px;
+   .listNavi {
+        li {
+            position: relative;
+            width: 100%;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: calc(100% - 60px);
+                height: 1px;
+                background-color: rgba($color: #FFF, $alpha: 0.2);
+                transform: translateX(-50%);
+            }
+            &:first-child::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: calc(100% - 60px);
+                height: 1px;
+                background-color: rgba($color: #FFF, $alpha: 0.2);
+                transform: translateX(-50%);
+            }
+
+            &.hide {
+                display: none;
+            }
+        }
+        a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px 60px 10px 30px;
+            min-height: 60px;
+            color: #FFF;
+            font-size: 1.6rem;
+            line-height: 1;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s linear ;
+            z-index: 2;
+            .iconArrow {
+                content: '';
+                position: absolute;
+                width: 13px;
+                height: 11px;
+                top: 50%;
+                right: 41px;
+                fill: #FFF;
+                transform: translateY(-50%);
+                transition: fill 0.3s linear;
+                z-index: 1;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #FFF;
+                width: 0%;
+                -webkit-transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+                -moz-transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+                -o-transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+                transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+                z-index: -1;
+            }
+            &.active {
+                color: #6B64C1;
+                .iconArrow {
+                    fill: #6B64C1;
+                }
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+   }
+   @include media-down(1024) {
+        margin-top: 40px;
+        .listNavi {
+            a {
+                min-width: 50px;
+                padding-left: 20px;
+                padding-right: 50px;
+                font-size: 1.4rem;
+                .iconArrow {
+                    right: 35px;
+                }
+            }
+            li {
+                &:first-child::after,
+                &::before {
+                    width: calc(100% - 40px);
+                }
+            }
+        }
+    }
+
+    @include media-up(sp) {
+        .listNavi {
+            a {
+                &:hover {
+                    color: #6B64C1;
+                    .iconArrow {
+                        fill: #6B64C1;
+                    }
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+   }
+   @include media-down(sp) {
+        margin: 30px 0;
+        .listNavi {
+            li {
+                &:first-child::after,
+                &::before {
+                    width: calc(100% - 30px);
+                }
+            }
+            a {
+                min-height: 50px;
+                font-size: 1.3rem;
+                padding: 5px 45px 5px 15px;
+                .iconArrow {
+                    width: 13px;
+                    height: 10px;
+                    right: 26px;
+                }
+            }
+        }
+    }
+}
+.playByPlay #main-navi .listNavi #playByPlay, .videoList #main-navi .listNavi #videoList, .pageFaq #main-navi .listNavi #faq, .pageTeam #main-navi .listNavi #teams, .pageNews #main-navi .listNavi #news, .pagePeriod #main-navi .listNavi #period, .pageBoard #main-navi .listNavi #board {
+    color: $color-bg01;
+    .iconArrow {
+        fill: $color-bg01;
+    }
+    &::before {
+        width: 100%;
+    }
+}
+

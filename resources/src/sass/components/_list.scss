@@ -1,0 +1,814 @@
+.aboutOur {
+    margin: 50px 0;
+
+    &Row {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $color-gray03;
+        border-bottom: 1px solid $color-gray03;
+
+        &:nth-child(even) {
+            border: none;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $color-gray03;
+        }
+
+        span {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 28px 10px;
+
+            @include media-down(sp) {
+                font-size: 1.4rem;
+                padding: 14px 10px;
+            }
+
+            &:first-child {
+                width: 270px;
+                font-weight: 500;
+
+                @include media-down(sp) {
+                    width: 100px;
+                }
+            }
+
+            &:last-child {
+                flex: 1;
+            }
+        }
+    }
+}
+
+.listContent {
+    margin: 23px 0 18px;
+
+    li {
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background-color: $color-bg01;
+            border-radius: 100px;
+            margin-right: 12px;
+        }
+    }
+
+    @include media-down(sp) {
+        li {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.listContent1 {
+    padding: 12px;
+    background-color: $color-gray04;
+
+    @include media-down(sp) {
+        padding: 5px 10px;
+    }
+}
+
+.listContent2 {
+    > li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+        font-size: 1.6rem;
+        line-height: calc(30 / 16);
+        text-indent: -30px;
+        span {
+            width: 25px;
+            display: inline-block;
+            margin-right: 5px;
+            color: $color-black;
+            text-align: right;
+        }
+    }
+    @include media-down(sp) {
+        > li {
+            padding-left: 20px;
+            font-size: 1.4rem;
+            line-height: calc(50 / 24);
+            text-indent: -20px;
+            span {
+                width: 15px;
+            }
+        }
+
+    }
+}
+
+.listContent3 {
+    padding-left: 5px;
+    > li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+        font-size: 1.6rem;
+        line-height: calc(30 / 16);
+        text-indent: -30px;
+        span {
+            width: 26px;
+            height: 26px;
+            display: inline-block;
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: $color-bg01;
+            color: $color-white;
+            font-size: 1.4rem;
+            text-align: center;
+            text-indent: 0;
+        }
+    }
+    @include media-down(sp) {
+        padding-left: 0;
+        > li {
+            padding-left: 20px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-indent: -20px;
+            span {
+                width: 20px;
+                height: 20px;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+}
+
+.listTeams {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -25px -20px 0;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: calc((100% / 4) - 25px);
+        margin: 0 25px 20px 0;
+        border: 1px solid $color-gray03;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .blockTop {
+        padding: 25px 20px 20px;
+        text-align: center;
+
+        .imgShirt {
+            width: 55px;
+            height: 59px;
+            margin: 0 auto 10px;
+            fill: $color-black02;
+
+            &.colorGreen {
+                fill: #008136;
+            }
+
+            &.colorEminence {
+                fill: #692787;
+            }
+
+            &.colorSilver {
+                fill: $color-gray10;
+            }
+
+            &.colorDoveGray {
+                fill: $color-gray02;
+            }
+
+            &.colorPizazz {
+                fill: #FF8800;
+            }
+
+            &.colorSupernova {
+                fill: #FFCF0D;
+            }
+
+            &.colorMandalay {
+                fill: #AE7F21;
+            }
+
+            &.colorClementine {
+                fill: #EE6F00;
+            }
+
+            &.colorMonza {
+                fill: #D2003A;
+            }
+
+            &.colorClaret {
+                fill: #911A3A;
+            }
+
+            &.colorGreenPea {
+                fill: #175340;
+            }
+
+            &.colorDeepBlush {
+                fill: #DD71A8;
+            }
+
+            &.colorLipstick {
+                fill: #C7007D;
+            }
+
+            &.colorClaret {
+                fill: #911A3A;
+            }
+
+            &.colorEndeavou {
+                fill: #075BB2;
+            }
+
+            &.colorDownriver {
+                fill: #0B2951;
+            }
+
+            &.colorAzure {
+                fill: #3A5DA1;
+            }
+
+            &.colorCerulean {
+                fill: #0095D8;
+            }
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 40px;
+            color: $text-color;
+            font-size: 1.5rem;
+            line-height: calc(20 / 15);
+            font-weight: bold;
+        }
+    }
+
+    .blockBtm {
+        padding: 15px;
+        background-color: $color-gray11;
+        border-top: 1px solid $color-gray03;
+
+        .btnCmn02:last-child {
+            margin-top: 5px;
+        }
+    }
+
+    @include media-down(1190) {
+        margin-right: -15px;
+
+        .item {
+            width: calc((100% / 3) - 15px);
+            margin-right: 15px;
+        }
+
+        .blockTop {
+            padding: 20px 15px 15px;
+
+            .imgShirt {
+                width: 51px;
+                height: 55px;
+            }
+
+            .title {
+                font-size: 1.4rem;
+            }
+        }
+
+        .blockBtm {
+            .btnCmn02 {
+                padding-left: 25px;
+                padding-right: 25px;
+                font-size: 1.3rem;
+
+                .iconArrow {
+                    width: 8px;
+                    height: 7px;
+                }
+            }
+        }
+    }
+
+    @include media-down(sp) {
+        margin-bottom: -10px;
+
+        .item {
+            width: calc((100% / 2) - 15px);
+            margin-bottom: 10px;
+        }
+
+        .blockTop {
+            padding: 15px 15px 14px;
+
+            .imgShirt {
+                width: 37px;
+                height: 39px;
+                margin-bottom: 5px;
+            }
+
+            .title {
+                min-height: 30px;
+                font-size: 1.2rem;
+                line-height: calc(15 / 12);
+            }
+        }
+
+        .blockBtm {
+            padding: 6px 9px;
+            .btnCmn02 {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+.listStrategyBoard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px 50px 0;
+    .item {
+        width: calc((100% / 3) - 30px);
+        margin: 0 30px 60px 0;
+    }
+    .blockImg {
+        margin-bottom: 10px;
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+        .ctrCheckbox {
+            display: inline-flex;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+            .checkmark {
+                padding-left: 0;
+                &::after {
+                    left: 5px;
+                    width: 12px;
+                    height: 10px;
+                    background-size: 12px auto;
+                }
+                &::before {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+    }
+    .blockContent {
+        .textDateTime {
+            margin-bottom: 7px;
+            padding-left: 20px;
+            background: url(/assets/img/svg/icon_history.svg) no-repeat left 0 top 50%;
+            background-size: 13px auto;
+            color: $color-gray13;
+            font-size: 1.2rem;
+            line-height: calc(16 / 12);
+        }
+        .nameMatch {
+            color: $color-bg01;
+            font-size: 1.6rem;
+            line-height: calc(25 / 16);
+            text-decoration: none;
+            &:hover {
+                color: $color-bg01;
+                text-decoration: underline;
+            }
+        }
+    }
+    @include media-down(1024) {
+        margin-right: -15px;
+        .item {
+            width: calc((100% / 3) - 15px);
+            margin-right: 15px;
+        }
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 10px;
+        .item {
+            width: calc((100% / 2) - 15px);
+            margin-bottom: 30px;
+        }
+        .blockImg {
+            .ctrCheckbox {
+                top: 5px;
+                left: 5px;
+                width: 18px;
+                height: 18px;
+                .checkmark {
+                    &::after {
+                        left: 4px;
+                        width: 10px;
+                        height: 8px;
+                        background-size: 10px auto;
+                    }
+                    &::before {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+        .blockContent {
+            .textDateTime {
+                margin-bottom: 5px;
+                padding-left: 15px;
+                background-size: 10px auto;
+                font-size: 1rem;
+                line-height: calc(14 / 10);
+            }
+            .nameMatch {
+                font-size: 1.1rem;
+                line-height: calc((35 / 22) / 2);
+            }
+        }
+    }
+}
+
+.listDots {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        position: relative;
+        width: 140px;
+        margin-bottom: 13px;
+        padding: 0 10px 0 20px;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-last-child(2):nth-child(odd) {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            background-color: $color-gray10;
+            content: '';
+        }
+
+        &.dotRed {
+            &::before {
+                background-color: #FF6C6C;
+            }
+        }
+
+        &.dotGreen {
+            &::before {
+                background-color: #9BF237;
+            }
+        }
+
+        &.dotBlue {
+            &::before {
+                background-color: #37B7F0;
+            }
+        }
+    }
+}
+
+.listDots2 {
+    display: flex;
+    flex-direction: column;
+
+    li {
+        position: relative;
+        width: 140px;
+        margin-bottom: 13px;
+        padding: 0 20px 0 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: right;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            position: absolute;
+            right: 0;
+            top: 3px;
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            background-color: $color-gray10;
+            content: '';
+        }
+
+        &.item1 {
+            &::before {
+                background-color: #DC56AA;
+            }
+        }
+
+        &.item2 {
+            &::before {
+                background-color: #A56DBE;
+            }
+        }
+
+        &.item3 {
+            &::before {
+                background-color: #F89191;
+            }
+        }
+
+        &.item4 {
+            &::before {
+                background-color: #F2CD38;
+            }
+        }
+
+        &.item5 {
+            &::before {
+                background-color: #E18D2D;
+            }
+        }
+
+        &.item6 {
+            &::before {
+                background-color: #D6AC56;
+            }
+        }
+
+        &.item7 {
+            &::before {
+                background-color: #5EAC7F;
+            }
+        }
+
+        &.item8 {
+            &::before {
+                background-color: #437FBC;
+            }
+        }
+
+        &.item9 {
+            &::before {
+                background-color: #79B9D5;
+            }
+        }
+    }
+}
+
+.foulNoteList {
+    margin-bottom: 60px;
+    border: 1px solid #CCCCCC;
+    .item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCCCCC;
+        }
+    }
+    .ttl {
+        min-width: 160px;
+        margin-right: 15px;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .foulType {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+    }
+    .bg01 {
+        background-color: rgba(255, 239, 13, 0.16);
+    }
+    .bg02 {
+        background-color: rgba(247, 65, 28, 0.1);
+    }
+    @include media-down(sp) {
+        margin-bottom: 30px;
+        .item {
+            padding: 15px 10px;
+        }
+        .ttl {min-width: 80px;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+    }
+}
+.lineupBox {
+    display: flex;
+    justify-content: space-between;
+    & > * {
+        width: calc((100% - 40px) / 2);
+    }
+    @include media-down(sp) {
+        flex-direction: column;
+        &>* {
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.memBox {
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: $color-white;
+        background-color: #666666;
+        .team {
+            display: inline-block;
+            width: 100%;
+            padding: 7px 15px;
+        }
+        .diagram {
+            display: inline-block;
+            padding: 7px 15px;
+            font-family: $font-Barlow;
+            font-size: 3rem;
+            font-weight: 500;
+            min-width: 120px;
+            text-align: center;
+            background-color: #333333;
+        }
+    }
+    .mapBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 0px;
+        min-height: 405px;
+        height: calc(100% - 55px);
+        background: url(/assets/img/common/bg_match.png) no-repeat 50% 50%/100% 100%;
+    }
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+    .infoMem {
+        text-align: center;
+        .num {
+            padding-top: 8px;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 1;
+            font-weight: 500;
+            font-family: $font-Barlow;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid $color-white;
+            margin-bottom: 5px;
+            color: $color-white;;
+        }
+        .name {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+    &.home {
+        .num {
+            background-color: #692787;
+        }
+    }
+    &.away {
+        .num {
+            background-color: #188D49;
+        }
+    }
+    &01 {
+        .info {
+            font-size: 2rem;
+            padding: 0;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            font-weight: normal;
+            text-align: left;
+            background-color: $color-white;
+            color: $text-color;
+            .teamInfoName {
+                width: 100%;
+                padding: 14px;
+                justify-content: flex-start;
+            }
+            .diagram {
+                padding: 14px;
+                background-color: $color-white;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                color: $text-color;
+                font-size: 2.6rem;
+                font-weight: normal;
+            }
+        }
+        .mapBox {
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+    @include media-down(sp) {
+        .info {
+            font-size: 1.4rem;
+            .diagram {
+                font-size: 2rem;
+            }
+        }
+        .infoMem {
+            .num {
+                width: 35px;
+                height: 35px;
+                font-size: 1.8rem;
+            }
+            .name {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+.noteShoot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 35px;
+    li {
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 0px 15px;
+        margin-bottom: 15px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(30deg);
+            width: 3px;
+            height: 35px;
+        }
+        &.line01 {
+            &::before {
+                background-color: #FF6565;
+            }
+        }
+        &.line02 {
+            &::before {
+                background-color: #37B7F0;
+            }
+        }
+        &.line03 {
+            &::before {
+                background-color: #9BF237;
+            }
+        }
+        &.line04 {
+            &::before {
+                background-color: #CCCCCC;
+            }
+        }
+    }
+    @include media-down(sp) {
+        li {
+            font-size: 1.1rem;
+            &::before {
+                height: 25px;
+                width: 2px;
+            }
+         }
+    }
+}

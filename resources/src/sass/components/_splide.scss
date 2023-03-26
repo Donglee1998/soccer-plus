@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// Splide style
+// -----------------------------------------------------------------------------
+
+.splide {
+    margin-bottom: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+    .splide__arrow {
+        bottom: 13px;
+        top: auto;
+        width: 25px;
+        height: 25px;
+        opacity: 1;
+        background: none;
+        transform: unset;
+        outline: none;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: url(/assets/img/svg/icon_arrow.svg) no-repeat center;
+            background-size: 14px;
+        }
+        svg {
+            display: none;
+        }
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+    .splide__arrow--prev {
+        &::before {
+            transform: rotate(-180deg);
+        }
+    }
+    @include media-down(sp) {
+        border-radius: 5px;
+        .splide__arrow {
+            bottom: 9px;
+            width: 17px;
+            height: 17px;
+            right: 7px;
+            &::before {
+                background-size: 10px;
+            }
+        }
+        .splide__arrow--prev {
+            right: auto;
+            left: 7px;
+        }
+    }
+    .splide__track--nav {
+        .splide__list  {
+            .splide__slide {
+                border: none;
+                &.is-active {
+                    border: none;
+                }
+            }
+        }
+    }
+}
+.jsSplideText {
+    .splide__arrow {
+        display: none;
+    }
+}
+

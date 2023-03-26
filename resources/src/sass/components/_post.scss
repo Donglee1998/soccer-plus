@@ -1,0 +1,256 @@
+// -----------------------------------------------------------------------------
+// Post style
+// -----------------------------------------------------------------------------
+
+.post {
+    margin-bottom: 100px;
+    &Time {
+        display: flex;
+        gap: 0 10px;
+        align-items: center;
+        margin: -5px 0 4px;
+        font-weight: normal;
+        time {
+            color: $color-gray02;
+            font-size: 1.6rem;
+            line-height: calc(35 / 16);
+            @include media-down(sp) {
+                font-size: 1.2rem;
+            }
+        }
+        a,
+        span {
+            font-size: 1.3rem;
+            color: $text-color;
+            line-height: 1.5;
+            width: 130px;
+            padding: 2px 10px 2px;
+            background: #F9F9F9 0% 0% no-repeat padding-box;
+            border: 1px solid $color-gray03;
+            border-radius: 100px;
+            text-align: center;
+            transition: opacity .3s ease;
+            @include media-down(sp) {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+        }
+        a {
+            @include media-up(sp) {
+                &:hover {
+                    text-decoration: none;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    &Content {
+        padding-top: 40px;
+        border-top: 1px solid $color-gray03;
+        margin-bottom: 30px;
+        @include media-down(sp) {
+            margin-bottom: 15px;
+            padding-top: 20px;
+        }
+        &Row {
+            display: flex;
+            gap: 0 40px;
+            margin-bottom: 40px;
+            @include media-down(sp) {
+                flex-direction: column;
+                margin-bottom: 20px;
+                gap: 20px 0;
+            }
+            .postThumbnail {
+                flex-shrink: 0;
+                max-width: 520px;
+                @include media-down(lg) {
+                    max-width: 300px;
+                    align-self: flex-start;
+                }
+                @include media-down(sp) {
+                    max-width: 738px;
+                    align-self: initial;
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &.style01,
+        &.style04 {
+            margin-bottom: 0;
+            &:not(:last-child) {
+                margin-bottom: 78px;
+            }
+            .postContentRow {
+                gap: 0 60px;
+                .postThumbnail {
+                    max-width: 560px;
+                    width: 50%;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.style02 {
+            .postContentRow {
+                margin-bottom: 0;
+                gap: 0 30px;
+                .postThumbnail {
+                    max-width: 210px;
+                    width: 40%;
+                }
+            }
+        }
+        &.style03 {
+            margin-bottom: 0;
+            &:not(:last-child) {
+                margin-bottom: 60px;
+            }
+            .postContentRow {
+                margin-bottom: 0;
+                align-items: center;
+                gap: 0 40px;
+                .postThumbnail {
+                    max-width: 740px;
+                    width: 70%;
+                }
+            }
+        }
+        &.style04 {
+            .postContentRow {
+                gap: 0 70px;
+            }
+        }
+        &.style01,
+        &.style02,
+        &.style03,
+        &.style04 {
+            border-top: 0;
+            padding-top: 0;
+            a {
+                text-decoration: none;
+                color: $text-color;
+                transition: opacity .3s;
+                &:hover {
+                    text-decoration: none;
+                }
+                @include media-up(1024) {
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+            .btnDeal {
+                &.btnPurple {
+                    color: $color-white;
+                }
+            }
+            .postThumbnail {
+                img {
+                    height: auto;
+                }
+            }
+        }
+        &.style05 {
+            padding: 0;
+            border-top: none;
+            .postContentRow {
+                flex-direction: column;
+                margin-bottom: 0;
+                .postThumbnail {
+                    max-width: 520px;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        @include media-down(sp) {
+            margin-bottom: 15px;
+            padding-top: 20px;
+            &.style01,
+            &.style04 {
+                &:not(:last-child) {
+                    margin-bottom: 40px;
+                }
+                .postContentRow {
+                    gap: 0;
+
+                    .postThumbnail {
+                        max-width: 100%;
+                        width: 100%;
+                        margin-bottom: 25px;
+                    }
+
+                    .detail {
+                        order: 1;
+                    }
+                }
+            }
+            &.style02 {
+                .postContentRow {
+                    flex-direction: row;
+                    gap: 0 16px;
+                    .postThumbnail {
+                        width: 30%;
+                    }
+                    .detail {
+                        padding: 0;
+                        .ttlCmn01 {
+                            margin-bottom: 2px;
+                        }
+                        .txtCm01 {
+                            line-height: 2;
+                        }
+                    }
+                }
+            }
+            &.style03 {
+                &:not(:last-child) {
+                    margin-bottom: 64px;
+                }
+                .postContentRow {
+                    margin-bottom: 0;
+                    align-items: center;
+                    gap: 0 40px;
+                    .postThumbnail {
+                        max-width: 100%;
+                        width: 100%;
+                        margin-bottom: 18px;
+                    }
+                }
+            }
+            &.style04 {
+                .postContentRow {
+                    gap: 0;
+                    .postThumbnail {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            &.style05 {
+                .postContentRow {
+                    gap: 0;
+                    .postThumbnail {
+                        max-width: 100%;
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 45px;
+        &Time {
+            margin: 0 0 6px;
+        }
+    }
+}

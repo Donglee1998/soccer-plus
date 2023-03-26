@@ -1,0 +1,216 @@
+// -----------------------------------------------------------------------------
+// Block style
+// -----------------------------------------------------------------------------
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    @page {
+        size: portrait;
+    }
+}
+
+.blockCommon1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    overflow: auto;
+
+    .blockCol1 {
+        width: calc(31% - 20px);
+        .headline14 {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .blockCol2 {
+        width: 38%;
+
+        .headline13 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;  
+        }
+    }
+
+    .tblStyle04 {
+        td,th {
+            padding: 0 5px;
+            height: 34px;
+        }
+    }
+
+    @media print and (min-width: 374px) {
+        .tblStyle04 {
+            font-size: 1.3rem;
+
+            td,th {
+                height: 30px;
+            }
+        }
+    }
+}
+
+.blockCommon2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color-gray03;
+
+    &.custom {
+        flex-direction: column;
+    }
+
+    .headBox {
+        width: 360px;
+        min-width: 360px;
+        padding-right: 30px;
+    }
+
+    .contentBox {
+        // width: calc(100% - 360px);
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .mapScroll {
+            overflow-x: unset;
+            .blockMap {
+                min-width: 650px;
+            }
+        }
+    }
+
+    .shootRate__level {
+        display: flex;
+        padding: 8px 13px;
+    }
+}
+
+.blockCommon3 {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .wrap {
+        display: flex;
+        min-width: 1100px;
+        width: 100%;
+    }
+
+    .colLeft {
+        width: 47%;
+    }
+
+    .colRight {
+        width: 53%;
+    }
+}
+
+@include media-down(sp) {
+    .blockCommon1 {
+        .blockCol1 {
+            width: calc(30% - 10px);
+    
+            .headline14 {
+                height: 44px;
+                padding-top: 6px;
+                background-position-y: 8px;
+            }
+        }
+    }
+
+    .blockCommon2 {
+        flex-direction: column;
+
+        .headBox {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+    
+        .contentBox {
+            width: 100%;
+        }
+
+        .shootRate__level {
+            padding: 15px 0 0px;
+        }
+    }
+}
+
+.timeRateBox {
+    display: flex;
+    width: 50%;
+    margin-bottom: 0px;
+    border: 1px solid #CCC;
+    line-height: 1.5;
+    background-color: #EBEBEB;
+    
+    &.fullW {
+        width: 100%;
+    }
+    
+    &.noBrL {
+        border-left: 0;
+        width: 50%;
+    }
+    .info {
+        position: relative;
+        overflow: auto;
+        padding: 10px 20px;
+        background-color: #fff;
+        width: 100%;
+    }
+
+    .title1 {
+        padding: 20px 10px;
+        width: 60px;
+        min-width: 60px;
+        text-align: center;
+        display: flex;
+        align-items: baseline;
+
+        .ttl {
+            font-size: 2.4rem;
+            font-family: $font-Barlow2;
+            font-weight: 500;
+            &01 {
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+
+        .sub {
+            font-size: 1.4rem;
+        }
+    }
+
+    .title2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .score {
+        margin-top: 8px;
+    }
+
+}

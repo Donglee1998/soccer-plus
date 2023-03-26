@@ -1,0 +1,94 @@
+// -----------------------------------------------------------------------------
+// Login style
+// -----------------------------------------------------------------------------
+
+
+.headLogin {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: $text-color;
+    box-shadow: 0px 5px 15px 0px rgba($color: $color-black, $alpha: 0.2);
+    z-index: 2;
+    .logo {
+        margin: 0 auto 0 0;
+    }
+}
+
+.containerLogin {
+    padding: 140px 20px;
+    background: url(/assets/img/bg_login.jpg) no-repeat center;
+    background-size: cover;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .formContent {
+        margin: 0 auto;
+        padding: 40px;
+        min-width: 600px;
+        border-radius: 10px;
+        background-color: $color-white;
+        box-shadow: 1px 10px 50px rgba($color: $color-black, $alpha: 0.1);
+    }
+}
+
+.footerLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: $color-gray01;
+    text-align: center;
+    .copy-right {
+        font-family: $font-Barlow;
+        color: $color-gray02;
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+}
+
+@include media-down(1024) {
+    .containerLogin {
+        .formContent {
+            padding: 40px;
+        }
+    }
+}
+
+@include media-down(sp) {
+    .headLogin {
+        height: 50px;
+        .logo img {
+            height: 32px;
+            object-fit: cover;
+        }
+    }
+    .containerLogin {
+        background-position-x: 7%;
+        min-height: calc(100vh - 100px);
+        padding: 50px 20px;
+        .formContent {
+            width: 90%;
+            max-width: 300px;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 5px;
+        }
+    }
+    .footerLogin {
+        height: 50px;
+        .copy-right {
+            font-size: 1rem;
+        }
+    }
+}
+@include media-down(374) {
+    .containerLogin {
+        .formContent {
+            min-width: 250px;
+        }
+    }
+}

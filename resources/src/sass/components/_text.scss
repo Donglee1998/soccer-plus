@@ -1,0 +1,123 @@
+// -----------------------------------------------------------------------------
+// Text style
+// -----------------------------------------------------------------------------
+.ttlCmn {
+    margin-bottom: 22px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 1.4;
+
+    @include media-down(sp) {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+.ttlCmn01 {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.4;
+
+    @include media-down(sp) {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+
+.ttlCmn02 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+
+    @include media-down(sp) {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+}
+
+.txtCmn {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    line-height: 1.5;
+
+    @include media-down(sp) {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+}
+
+.txtCm01 {
+    font-size: 1.6rem;
+    line-height: calc(30 / 16);
+    color: $text-color;
+
+    @include media-down(sp) {
+        font-size: 1.2rem;
+        line-height: calc(50 / 24);
+    }
+}
+
+.txtCm02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    color: $color-white;
+    font-family: $font-Barlow;
+    font-weight: 500;
+
+    .per {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 2px;
+    }
+
+    .num {
+        font-size: 1.7rem;
+    }
+
+    .sub {
+        font-size: 1rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+    
+
+    @include media-down(sp) {
+        
+    }
+}
+
+.txtNote {
+    font-size: 14px;
+    line-height: calc(30 / 14);
+    color: $text-color;
+
+    @include media-down(sp) {
+        font-size: 10px;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.txtNote1 {
+    font-size: 12px;
+    line-height: calc(25 / 12);
+    color: $text-color;
+
+    span {
+        color: #D33D3D;
+    }
+}
+
+.txtBlue {
+    font-weight: bold;
+    color: $color-primary;
+}

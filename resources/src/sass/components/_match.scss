@@ -1,0 +1,552 @@
+.groupDateInfo {
+    display: flex;
+    justify-content: space-between;
+
+    .dateInfo {
+        max-width: 48%;
+    }
+}
+
+.dateInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    .tag {
+        display: inline-block;
+        background-color: $color-bg01;
+        border-radius: 2px;
+        padding: 5px 10px;
+        min-width: 100px;
+        color: $color-white;
+        font-size: 1.4rem;
+        margin-right: 15px;
+        text-align: center;
+
+        &Gray {
+            @extend .tag;
+            background-color: $color-gray02;
+            font-size: 1.5rem;
+        }
+    }
+    .date {
+        font-size: 1.6rem;
+    }
+}
+.teamInfo {
+    display: flex;
+    padding: 15px 0px;
+    border-top: 3px solid $color-bg02;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    &Name {
+        width: 41%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .vsBox {
+        min-width: 186px;
+        width: 18%;
+    }
+    .icon {
+        width: 1em;
+        height: 1em;
+        font-size: 2.5rem;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .home {
+        .icon {
+            fill: $color-bg03;
+        }
+    }
+    .away {
+        .icon {
+            fill: $color-green02;
+        }
+    }
+    &.line01 {
+        border-top-width: 1px;
+        border-top-color: #CCCCCC;
+    }
+
+    @include media-down(sp) {
+        .icon {
+            font-size: 1.8rem;
+        }
+    }
+}
+.scoreInfo {
+    display: flex;
+    color: $text-color;
+    border: 1px solid #CCCCCC;
+    background-color: #EBEBEB;
+    .scoreBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 41%;
+        padding: 19px 40px;
+        font-size: 7rem;
+        line-height: 1;
+        text-align: center;
+        font-family: $font-Barlow;
+        font-weight: 500;
+    }
+    .scoreDetail {
+        width: 18%;
+        min-width: 186px;
+        padding: 35px 30px;
+        border-width: 0px 1px 0px 1px;
+        border-style: solid;
+        border-color: #CCCCCC;
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:not(:last-child) {
+                margin-bottom: 9px;
+            }
+        }
+        .time {
+            display: inline-block;
+            width: 50px;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        .point {
+            width: 30px;
+            text-align: center;
+            font-family: $font-Barlow;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+    }
+    &Detail {
+        @extend .scoreInfo;
+        border-top: 0;
+        background-color: $color-white;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        .scoreBox {
+            font-size: 1.4rem;
+            flex-direction: column;
+            line-height: 1.8;
+            padding: 15px;
+            span {
+                display: inline-block;
+            }
+        }
+        .scoreDetail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            text-align: center;
+            border: 0;
+            padding: 20px 15px 15px;
+        }
+    }
+}
+.analysisNav {
+    display: flex;
+    margin-bottom: 35px;
+    a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 25%;
+        padding: 15px 15px 10px;
+        text-align: center;
+        border: 1px solid $color-gray10;
+        border-left: 0;
+        transition: all .3s ease;
+        color: $color-gray10;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            transition: background-color .3s ease;
+        }
+        &:first-child {
+            border-left: 1px solid $color-gray10;
+        }
+        &.active {
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            color: $color-bg01;
+            text-decoration: none;
+            .icon {
+                fill: $color-bg01;
+            }
+            &:before {
+                background-color: $color-bg01;
+            }
+        }
+        &:hover {
+            text-decoration: none;
+        }
+        @include media-up(1025) {
+            &:hover {
+                border-top-color: transparent;
+                border-bottom-color: transparent;
+                color: $color-bg01;
+                .icon {
+                    fill: $color-bg01;
+                }
+                &:before {
+                    background-color: $color-bg01;
+                }
+            }
+        }
+    }
+    .icon {
+        height: 40px;
+        width: 40px;
+        margin-bottom: 10px;
+        fill: $color-gray10;
+        transition: fill .3s ease;
+        &01 {
+            width: 31px;
+        }
+        &03 {
+            height: 32px;
+        }
+        &04 {
+            height:36px;
+            width: 52px;
+        }
+    }
+    span {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+}
+.timeTab {
+    &Info {
+        display: flex;
+        margin-bottom: 40px;
+        margin-right: -2px;
+        a {
+            width: calc((100% / 4) - 2px);
+            margin-right: 2px;
+            display: flex;
+            justify-content: center;
+            padding: 20px 15px;
+            align-items: center;
+            font-size: 2.2rem;
+            color: $color-gray10;
+            font-weight: 500;
+            border-bottom: 3px solid $color-gray10;
+            transition: all .3s ease;
+            &:hover {
+                text-decoration: none;
+            }
+            @include media-up(1025) {
+                &:hover {
+                    color: $color-bg01;
+                    border-bottom-color: $color-bg01;
+                    .icon {
+                        fill: $color-bg01
+                    }
+                }
+            }
+            &.active {
+                .icon {
+                    fill: $color-bg01
+                }
+                color: $color-bg01;
+                border-bottom-color: $color-bg01;
+            }
+        }
+        .icon {
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: $color-gray10;
+            transition: fill .3s ease;
+        }
+        &.fS16 {
+            a {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    &Col2 {
+        a {
+            width: calc((100% / 2) - 2px);
+        }
+    }
+}
+.uploadBox {
+    position: relative;
+    border: 4px dashed $color-gray03;
+    min-height: 440px;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .ttl {
+        font-size: 2.6rem;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    .txt {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    .note {
+        font-size: 1.4rem;
+        color: $color-bg01;
+    }
+    .fileUpload {
+        position: relative;
+        border: 2px solid $color-bg01;
+        border-radius: 100px;
+        padding: 10px 15px;
+        color: $color-bg01;
+        background-color: $color-white;
+        font-size: 1.4rem;
+        font-weight: 500;
+        min-width: 260px;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        &:hover {
+            background-color: $color-bg01;
+            color: $color-white;
+        }
+    }
+}
+.playControl {
+    margin-bottom: 40px;
+    &.mb {
+        margin-bottom: 20px;
+    }
+    .groupCtrl {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &:after {
+            width: calc((100% - 10px) / 2);
+        }
+        & > * {
+            width: calc((100% - 10px) / 2);
+        }
+    }
+
+    @include media-down(sp) {
+        &.mb {
+            margin-bottom: 10px;
+        }
+        .groupCtrl {
+            &.spFull {
+                &:after {
+                    width: 100%;
+                }
+                & > * {
+                    width: 100%;
+                }
+
+                & > * + * {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+.dataTimeContent {
+    margin-bottom: 60px;
+    .ttl {
+        background-color: $color-bg04;
+        color: $color-white;
+        font-family: $font-Barlow;
+        font-size: 2.2rem;
+        font-weight: 500;
+        padding: 10px;
+    }
+    .tblList {
+        tr:first-child {
+            border-top: 0;
+            th,td {
+                border-top: 0;
+            }
+        }
+    }
+}
+@include media-down(sp) {
+    .groupDateInfo {
+        flex-direction: column;
+
+        .dateInfo {
+            max-width: 100%;
+        }
+    }
+    .dateInfo {
+        margin-bottom: 15px;
+        .tag {
+            min-width: 80px;
+            font-size: 1.1rem;
+        }
+        .date {
+            font-size: 1.2rem;
+        }
+    }
+    .teamInfo {
+        border-top-width: 2px;
+        font-size: 1.2rem;
+        align-items: center;
+        padding: 10px 0px;
+        &Name {
+            flex-direction: column;
+        }
+        .vsBox {
+            min-width: 93px;
+        }
+        .icon {
+            margin-right: 0px;
+            margin-bottom: 8px;
+        }
+    }
+    .scoreInfo {
+        .scoreBox {
+            padding: 12px 15px;
+            font-size: 4.5rem;
+        }
+        .scoreDetail {
+            padding: 17px 10px;
+            min-width: 96px;
+            .time {
+                font-size: 1.1rem;
+            }
+            .point {
+                width: 20px;
+                font-size: 1.3rem;
+            }
+        }
+        &Detail {
+            .scoreBox, .scoreDetail {
+                font-size: 1.1rem;
+                line-height: 1.2;
+                padding: 10px;
+            }
+        }
+    }
+    .analysisNav {
+        margin-bottom: 20px;
+        a {
+            padding-right: 5px;
+            padding-left: 5px;
+            justify-content: center;
+            &:before {
+                top: -3px;
+                height: 3px;
+            }
+        }
+        .icon {
+            height: 25px;
+            width: 25px;
+            &01 {
+                width: 19px;
+            }
+            &03 {
+                height: 25px;
+            }
+            &04 {
+                height:35px;
+                width: 25px;
+            }
+        }
+        span {
+            font-size: 1.1rem;
+        }
+    }
+    .timeTab {
+        &Info {
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: calc((100% / 2) - 2px);
+                font-size: 1.2rem;
+                border-bottom-width: 2px;
+            }
+            &.fS16 {
+                a {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    .uploadBox {
+        border-width: 2px;
+        min-height: 220px;
+        padding: 15px;
+        margin-bottom: 20px;
+        .ttl {
+            font-size: 1.7rem;
+        }
+        .txt {
+            display: none;
+        }
+        .note {
+            font-size: 1rem;
+        }
+        .fileUpload {
+            border-radius: 2px;
+            font-size: 1.2rem;
+            min-width: 190px;
+            margin-bottom: 20px;
+        }
+    }
+    .playControl {
+        margin-bottom: 20px;
+        .btnCtrl {
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .dataTimeContent {
+        margin-bottom: 30px;
+        .ttl {
+            display: none;
+        }
+        .tblList {
+            tr:first-child {
+                border-top: 1px solid $color-gray10;
+                th,td {
+                    border-top: 1px solid $color-gray10;
+                }
+            }
+        }
+    }
+}

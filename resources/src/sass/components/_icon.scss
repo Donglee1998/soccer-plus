@@ -1,0 +1,148 @@
+// -----------------------------------------------------------------------------
+// Icon style
+// -----------------------------------------------------------------------------
+
+.iconMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 23px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    span {
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+      height: 2px;
+      background: #fff;
+      transition: all .3s;
+      position: relative;
+      &:nth-child(2) {
+        width: calc(100% - 4px);
+      }
+      &:nth-child(3) {
+        width: calc(100% - 9px);
+      }
+
+      &+ span {
+        margin-top: 5px;
+      }
+    }
+
+}
+
+.not-active {
+   .iconMenu {
+        span {
+            &:nth-child(1) {
+                animation: ease .4s top-2 forwards;
+            }
+            &:nth-child(2) {
+                animation: ease .4s scaled-2 forwards;
+            }
+            &:nth-child(3) {
+                animation: ease .4s bottom-2 forwards;
+            }
+        }
+    }
+}
+
+.active {
+    .iconMenu {
+        span {
+            &:nth-child(1) {
+                animation: ease .4s top forwards;
+            }
+            &:nth-child(2) {
+                animation: ease .4s scaled forwards;
+                width: 100%;
+            }
+            &:nth-child(3) {
+                animation: ease .4s bottom forwards;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+  @keyframes top {
+    0% {
+      top: 0;
+      transform: rotate(0);
+    }
+    50% {
+      top: 7px;
+      transform: rotate(0);
+    }
+    100% {
+      top: 7px;
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes top-2 {
+    0% {
+      top: 7px;
+      transform: rotate(45deg);
+    }
+    50% {
+      top: 7px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes bottom {
+    0% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+    50% {
+      bottom: 7px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 7px;
+      transform: rotate(135deg);
+    }
+  }
+
+  @keyframes bottom-2 {
+    0% {
+      bottom: 7px;
+      transform: rotate(135deg);
+    }
+    50% {
+      bottom: 7px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+
+  @keyframes scaled {
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes scaled-2 {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

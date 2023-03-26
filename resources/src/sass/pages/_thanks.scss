@@ -1,0 +1,50 @@
+.blockThanks {
+    padding: 82px 0;
+    text-align: center;
+
+    .ttl {
+        margin-bottom: 26px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 1.7;
+    }
+
+    .txt {
+        margin-bottom: 68px;
+        font-size: 1.6rem;
+        line-height: 2.2;
+    }
+
+    @include media-down(sp) {
+        max-width: 500px;
+        margin: auto;
+        padding: 54px 0;
+
+        .ttl {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            line-height: 1.6;
+        }
+
+        .txt {
+            margin-bottom: 46px;
+            font-size: 1.2rem;
+            line-height: 2;
+            text-align: left;
+        }
+    }
+}
+
+.pageThanks {
+    @include media-down(sp) {
+        #main {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 55px);
+        }
+
+        #footer {
+            margin-top: auto;
+        }
+    }
+}

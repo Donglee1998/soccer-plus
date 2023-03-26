@@ -1,0 +1,187 @@
+// -----------------------------------------------------------------------------
+// Layout Settings
+// -----------------------------------------------------------------------------
+%center-content {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $grid-gutter-width;
+}
+
+html.noScroll {
+    overflow: hidden;
+}
+
+.inner {
+    @extend %center-content;
+
+    @include media-down(sp) {
+        padding: 0 $grid-gutter-width-sp;
+    }
+}
+
+.innerCommon {
+    @extend %center-content;
+    min-height: 75vh;
+}
+
+.inner01 {
+    @extend %center-content;
+    max-width: 1120px;
+    @include media-down(sp) {
+        padding: 0 $grid-gutter-width-sp;
+    }
+}
+
+.inner02 {
+    @extend %center-content;
+    max-width: 1220px;
+
+    @include media-down(sp) {
+        padding: 0 $grid-gutter-width-sp;
+    }
+}
+
+.inner03 {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @include media-down(sp) {
+        padding: 0 20px;
+    }
+}
+
+#contents {
+    @extend %center-content;
+    display: flex;
+
+    @include media-down(sp) {
+        display: block;
+        padding: 0 $grid-gutter-width-sp;
+    }
+}
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10;
+    display: none;
+    @include media-down(sp) {
+        top: 55px;
+    }
+}
+
+.innerMain {
+    width: calc(100% - 360px);
+    &.ftPos {
+        position: relative;
+        #footer {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+.twoCol {
+    display: flex;
+    #header {
+        min-width: 250px;
+        max-width: 360px;
+        width: 100%;
+        min-height: 100vh;
+        padding-bottom: 500px;
+    }
+}
+
+.content {
+    padding-top: 20px;
+    padding-bottom: 150px;
+    min-height: calc(100vh - 422px);
+}
+
+@include media-down(1440) {
+    .innerMain {
+        width: calc(100% - 300px);
+    }
+
+    .twoCol {
+        #header {
+            max-width: 300px;
+        }
+    }
+    .content {
+        min-height: calc(100vh - 362px);
+    }
+}
+
+@include media-down(1024) {
+    .innerMain {
+        width: calc(100% - 250px);
+    }
+
+    .twoCol {
+        #header {
+            max-width: 250px;
+        }
+    }
+}
+
+@include media-down(sp) {
+    .twoCol {
+        display: block;
+        #header {
+            width: 100%;
+            max-width: 100%;
+            min-height: auto;
+            padding-bottom: 0;
+        }
+    }
+    .innerMain {
+        width: 100%;
+        min-height: calc(100vh - 55px);
+    }
+
+    .content {
+        padding-top: 10px;
+        padding-bottom: 120px;
+        min-height: calc(100vh - 267px);
+    }
+}
+
+/* ------------------------------------------------------------------
+    2-4. Breadcrumbs styles
+-------------------------------------------------------------------*/
+.breadcrumbs {
+    position:relative;
+    padding:15px 21px;
+    margin-bottom:0;
+    font-size:12px;
+    border-radius:0;
+    background-color:#fafafa;
+}
+.breadcrumbs li {display:inline-block; }
+.breadcrumbs a:link,
+.breadcrumbs a:visited {
+    padding-right:10px;
+    background:url(/assets/admin/img/common/icon_breadcrumbs.gif) no-repeat 100% 50%;
+    color:#666;
+    text-decoration:none;
+}
+
+.btn {
+    background-color: #0c3675;
+    color: white;
+}
+
+.valInput {
+    border-color: #DDDDDD !important; 
+    background-color: #F9F9F9 !important;
+}
+

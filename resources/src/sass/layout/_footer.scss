@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// Footer style
+// -----------------------------------------------------------------------------
+#footer {
+    width: 100%;
+    .fNavi {
+        padding: 25px 20px;
+        background-color: $color-gray01;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li {
+                &:not(:last-child) {
+                    margin-right: 30px;
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $color-gray02;
+            font-size: 1.4rem;
+            transition: color .3s ease;
+            @include media-up(sp) {
+                &:hover {
+                    color: $color-bg01;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        font-family: $font-Barlow;
+        padding: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $color-white;
+        background-color: $color-gray;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}
+@include media-down(sp) {
+    #footer {
+        .fNavi {
+            padding: 20px 15px;
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            a {
+                font-size: 1.2rem;
+            }
+        }
+        .copyright {
+            font-size: 10px;
+            padding: 15px;
+        }
+    }
+}
+@include media-down(374) {
+    #footer {
+        .fNavi {
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            a {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

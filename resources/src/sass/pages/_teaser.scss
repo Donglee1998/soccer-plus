@@ -1,0 +1,74 @@
+.teaser {
+    &Container {
+        background: url(#{$base-url}img/teaser/bg_teaser.jpg) no-repeat 50% 50%/cover;
+    }
+    &Head {
+        margin-bottom: 20px;
+        .logo {
+            max-width: 190px;
+            margin: 0;
+        }
+    }
+    &Content {
+        width: 100%;
+        max-width: 1560px;
+        margin: 0 auto;
+        min-height: 100vh;
+        padding: 20px 30px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .info {
+            align-self: flex-end;
+            padding-right: 30px;
+            text-align: right;
+            img {
+                vertical-align: top;
+            }
+        }
+        .ttl {
+            margin-bottom: 20px;
+        }
+        .date {
+            font-size: 4rem;
+            font-weight: bold;
+            color: $color-white;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            span {
+                font-family: $font-Barlow;
+                display: inline-block;
+                font-size: 6rem;
+            }
+        }
+    }
+    @include media-down(sp) {
+        &Head {
+            .logo {
+                max-width: 95px;
+            }
+        }
+        &Content {
+            padding: 10px 15px 100px;
+            .info {
+                padding-right: 5px;
+            }
+            .ttl {
+                margin-bottom: 10px;
+            }
+            .date, .copyright {
+                max-width: 50%;
+                margin-left: auto;
+            }
+            .date {
+                max-width: 100%;
+                margin-bottom: 20px;
+                font-size: 2rem;
+                letter-spacing: 1px;
+                span {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

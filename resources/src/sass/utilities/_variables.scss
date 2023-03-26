@@ -1,0 +1,128 @@
+@charset "UTF-8";
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: Noto Sans JP,
+ヒラギノ角ゴシック Pro,
+Hiragino Kaku Gothic Pro,
+メイリオ,
+Meiryo,
+Osaka,
+ＭＳ Ｐゴシック,
+MS PGothic,
+Verdana,
+Arial,
+sans-serif !default;
+$font-Barlow: 'Barlow Semi Condensed', sans-serif;
+$font-Barlow2: 'Barlow', sans-serif;;
+$font-Lato: 'Lato', sans-serif;
+
+/// Text color
+/// @type Color
+$text-color: #333 !default;
+
+/// Link color
+/// @type Color
+$link-color: #36C !default;
+
+/// All other color
+/// @type Color
+$color-primary: #178CD6 !default;
+$color-secondary: lighten($color-primary, 10%) !default;
+
+$color-success: green !default;
+$color-warning: yellow !default;
+$color-error: #e5004f !default;
+$color-black: #000 !default;
+$color-black02: #222222;
+$color-white: #FFF !default;
+$color-gray: #4E4E4E;
+$color-gray01: #EFEFEF;
+$color-gray02: #666666;
+$color-gray03: #DDDDDD;
+$color-gray04: #F9F9F9;
+$color-gray05: #AAAAAA;
+$color-gray06: #444;
+$color-gray07: #F6F6F6;
+$color-gray08: #BBB;
+$color-gray09: #EEE;
+$color-gray10: #CCC;
+$color-gray11: #EEEEEE;
+$color-gray12: #dfdfdf;
+$color-gray13: #888;
+$color-gray14: #C5C5C5;
+$color-gray15: #F2F2F2;
+$color-gray16: #D5D5D5;
+$color-bg01: #6B64C1;
+$color-bg02: #373737;
+$color-bg03: #692787;
+$color-bg04: #232323;
+$color-green01: #73C69C;
+$color-green02: #008136;
+$color-green03: #E0F8F6;
+$color-green04: #B9DC88;
+$color-green05: #9DC85C;
+$color-green06: #8CAB5F;
+$color-green07: #ADB864;
+$color-green08: #D6DC88;
+$color-green09: #188D49;
+$color-blue01: #4B486F;
+$color-blue02: #9C96BE;
+$color-blue03: #99B1C4;
+$color-blue04: #4286E3;
+$color-blue05: #EAE9F6;
+$color-pink01:#FFDFEF;
+$color-red01: #F8D1B8;
+$color-red02: #F69C73;
+$color-red03: #F06043;
+$color-red04: #E83F3F;
+$color-red05: #BD1655;
+$color-red06: #D33D3D;
+$color-red07: #FDF5F5;
+$color-red08: #E34242;
+
+// Hover
+$color-primary-hover: lighten($color-primary, 30%) !default;
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1240px !default;
+
+/// Spacing on the left and the right
+/// @type Length
+$grid-gutter-width: 20px;
+$grid-gutter-width-sp: 15px;
+
+// Section spacing
+$section-spacing: 30px;
+$section-spacing-sp: calc($section-spacing / 2);
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$point-up: (xs: 375.1px,
+    sm: 576.1px,
+    sp: 768.1px,
+    md: 768.1px,
+    lg: 992.1px,
+    xl: 1200.1px) !default;
+$point-down: (xss: 320px,
+    xs: 375px,
+    sm: 576px,
+    sp: 768px,
+    md: 992px,
+    lg: 1200px) !default;
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+/// $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+$transition-duration: .3s !default;

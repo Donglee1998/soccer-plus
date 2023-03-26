@@ -1,0 +1,80 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import 'utilities/variables',
+'utilities/functions',
+'utilities/mixins';
+
+// 2. Vendors
+// @import 'vendor/normalize';
+
+// 3. Base stuff
+@import 'base/reset',
+'base/base',
+'base/typography',
+'base/helpers';
+
+// 4. Layout-related sections
+@import 'layout/header',
+'layout/navi',
+'layout/layout',
+// 'layout/grid',
+'layout/sidebar',
+'layout/footer';
+
+// 5. Components
+@import 'components/accordion',
+// 'components/alert',
+// 'components/anchorlink',
+'components/breadcrumbs',
+'components/button',
+'components/block',
+'components/chart/chart-rate',
+'components/chart/chart-compare',
+'components/chart/chart-compare2',
+'components/chart/chart-stat',
+'components/chart/chart-circle',
+'components/datepicker',
+// 'components/dropdown',
+// 'components/flex-video',
+'components/forms',
+'components/headline',
+'components/text',
+'components/error',
+'components/icon',
+'components/keyv',
+'components/post',
+'components/news',
+'components/pager',
+'components/list',
+'components/boxed',
+'components/color',
+// 'components/label',
+'components/pagination',
+'components/splide',
+'components/score',
+'components/tab',
+'components/table',
+'components/match',
+// 'components/tooltip',
+'components/common';
+
+// 6. Page-specific styles
+@import 'pages/home',
+// 'pages/contact',
+'pages/video',
+'pages/scorebook',
+'pages/thanks',
+'pages/login',
+'pages/team',
+'pages/tactic',
+'pages/contact',
+'pages/report',
+'pages/teaser';
+
+// 7. Themes
+@import '@splidejs/splide/css';
+// @import
+//   'themes/default';
+
+@import 'components/dev';

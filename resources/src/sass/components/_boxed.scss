@@ -1,0 +1,150 @@
+.boxedCmn {
+    border: 5px solid $color-bg01;
+    padding: 34px 0;
+    text-align: center;
+    color: $color-bg01;
+
+    .flexBox {
+        margin: 16px 0;
+        justify-content: center;
+        gap: 0 16px;
+
+        .btnCmn1 {
+            margin-top: 3px;
+
+            @include media-down(sp) {
+                margin-top: -1px;
+                padding: 3px 10px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .receptionistTime {
+        font-size: 16px;
+        font-weight: bold;
+
+        @include media-down(sp) {
+            font-size: 1rem;
+        }
+    }
+
+    @include media-down(sp) {
+        padding: 19px 10px 12px;
+        border-width: 3px;
+
+        .flexBox {
+            margin: 3px 0;
+
+            > * {
+                width: auto;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.colGrid2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px;
+    margin: 40px 0;
+
+    @include media-down(sp) {
+        grid-template-columns: auto;
+        gap: 20px;
+    }
+
+    .colGrid2Item {
+        max-width: 520px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include media-down(sp) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.colGrid3 {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+
+    .colGrid3Item {
+        max-width: 520px;
+        width: calc((100% - 40px) / 2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @include media-down(sp) {
+        .colGrid3Item {
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            img {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.hdrAllCheck {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    background-color: $color-gray11;
+    @include media-down(sp) {
+        min-height: 35px;
+        padding: 5px 10px;
+        margin-bottom: 25px;
+    }
+}
+
+.blockGameType {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .item {
+        height: 46px;
+        width: calc((100% / 2) - 10px);
+        .formControl {
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 1px 3px rgba($color: #000, $alpha: 0.1);
+        }
+    }
+    @include media-down(sp) {
+        .item {
+            height: auto;
+            width: 100%;
+            input.styleSelect,
+            select.formControl {
+                height: 40px;
+                box-shadow: none;
+            }
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

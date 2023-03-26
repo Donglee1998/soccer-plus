@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Chart style
+// -----------------------------------------------------------------------------
+
+.chartRate {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+
+    .team {
+        display: flex;
+        align-items: center;
+        padding: 3px 10px;
+
+        &1 {
+            @extend .team;
+            background-color: $color-bg03;
+            width: 59%;
+        }
+
+        &2 {
+            @extend .team;
+            justify-content: flex-end;
+            background-color: $color-green02;
+            width: 39%;
+        }
+    }
+
+    .percent {
+        display: flex;
+        align-items: baseline;
+        color: $color-white;
+        font-family: $font-Barlow2;
+        font-weight: 500;
+
+        .num {
+            font-size: 2.2rem;
+        }
+
+        .sub {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@include media-down(sp) {
+    .chartRate {
+
+    }  
+}

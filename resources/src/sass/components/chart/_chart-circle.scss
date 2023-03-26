@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// Chart Circle 
+// -----------------------------------------------------------------------------
+
+.blockChartCircle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 14px 25px;
+
+    .chartCircle {
+        margin-left: 40px;
+    }
+}
+
+.chartCircle {
+    width: 353px;
+}
+
+@include media-down(sp) {
+
+}

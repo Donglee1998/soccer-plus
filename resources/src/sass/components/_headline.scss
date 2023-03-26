@@ -1,0 +1,341 @@
+// -----------------------------------------------------------------------------
+// Headline style
+// -----------------------------------------------------------------------------
+
+.headline1 {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #33338C;
+        width: 100%;
+        height: 2px;
+    }
+
+    span {
+        font-size: 2.6rem;
+        font-weight: bold;
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 15px;
+        padding-bottom: 20px;
+
+        span {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.headline2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+
+    span {
+        position: relative;
+        display: inline-block;
+        padding-left: 15px;
+        color: #33338C;
+        font-size: 2.2rem;
+        line-height: 1.4;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            border-radius: 0 3px 3px 0;
+            background-color: #33338C;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 15px;
+        padding-bottom: 7px;
+
+        span {
+            font-size: 1.8rem;
+            padding-left: 10px;
+
+            &::before {
+                width: 3px;
+                border-radius: 0 2px 2px 0;
+            }
+        }
+    }
+}
+
+.headline3 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+
+    @include media-down(sp) {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+}
+
+.headline4 {
+    min-height: 60px;
+    padding: 10px 12px;
+    border-left: 8px solid $color-bg01;
+    color: $text-color;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.4rem;
+    line-height: calc(35 / 24);
+    font-weight: bold;
+
+    &.style01 {
+        display: block;
+
+        .txt {
+            display: inline;
+        }
+
+        .btnEdit {
+            margin-left: 20px;
+        }
+    }
+
+    @include media-down(sp) {
+        padding: 5px 8px;
+        min-height: 35px;
+        font-size: 1.6rem;
+        line-height: calc(35 / 32);
+        margin-bottom: 21px;
+        border-left-width: 4px;
+
+        &.style01 {
+            .btnEdit {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.headline5 {
+    font-size: 20px;
+    line-height: calc(35 / 20);
+    color: $text-color;
+    border-top: 3px solid $color-bg01;
+    border-bottom: 1px solid $color-gray10;
+    padding: 16px 0 16px 10px;
+    font-weight: bold;
+
+    &.mgb40 {
+        margin-bottom: 40px;
+    }
+
+    &.mgb30 {
+        margin-bottom: 30px;
+    }
+
+    @include media-down(sp) {
+        font-size: 1.5rem;
+        line-height: calc(35 / 30);
+        padding: 12px 0 12px 5px;
+
+        &.mgb40 {
+            margin-bottom: 20px;
+        }
+
+        &.mgb30 {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.headline6 {
+    font-size: 2.8rem;
+    line-height: calc(20 / 28);
+    font-weight: bold;
+    color: $color-bg01;
+
+    @include media-down(sp) {
+        font-size: 1.7rem;
+    }
+
+    span {
+        font-size: 2.2rem;
+        line-height: calc(20 / 22);
+
+        @include media-down(sp) {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.headline7 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+    color: $text-color;
+    font-size: 2.4rem;
+    line-height: calc(35 / 24);
+    font-weight: bold;
+    .imgShirt {
+        margin-right: 20px;
+        width: 55px;
+        min-width: 55px;
+        height: 59px;
+    }
+    @include media-down(sp) {
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+        .imgShirt {
+            margin-right: 10px;
+            width: 33px;
+            height: 35px;
+            line-height: calc(35 / 32);
+        }
+    }
+}
+
+.headline8 {
+    display: block;
+    padding: 14px;
+    font-size: 1.6rem;
+    color: $color-white;
+    background-color: #AAA;
+    line-height: 2.1;
+    text-align: center;
+
+    @include media-down(sp) {
+        margin-bottom: 12px;
+        padding: 12px;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+}
+
+.headline9 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid $text-color;
+    @include media-down(sp) {
+        font-size: 1.8rem;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom-width: 2px;
+    }
+}
+
+.headline10 {
+    margin: 20px 0 44px;
+
+    @include media-down(sp) {
+        margin: 0 0 20px;
+    }
+}
+
+.headline11 {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0 0 32px;
+    font-size: 3.8rem;
+    text-align: center;
+    font-weight: bold;
+
+    &::after {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 100px;
+        height: 2px;
+        background-color: $color-bg01;
+        transform: translateX(-50%);
+        content: '';
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 30px;
+        padding: 0 0 15px;
+        font-size: 2rem;
+
+        &::after {
+            width: 54px;
+        }
+    }
+}
+
+.headline12 {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0 0 46px;
+    font-size: 6rem;
+    line-height: 1.35;
+    text-align: center;
+    font-weight: bold;
+
+    &::after {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 100px;
+        height: 2px;
+        background-color: $color-black;
+        transform: translateX(-50%);
+        content: '';
+    }
+
+    @include media-down(sp) {
+        margin-bottom: 30px;
+        padding: 0 0 15px;
+        font-size: 3rem;
+
+        &::after {
+            width: 54px;
+        }
+    }
+}
+
+.headline13 {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: $color-gray02;
+    font-size: 2rem;
+    color: $color-white;
+    line-height: 1.5;
+    text-align: center;
+
+    @include media-down(sp) {
+        padding: 10px;
+        font-size: 1.6rem;
+    }
+}
+
+.headline14 {
+    padding-bottom: 10px;
+    font-size: 2rem;
+    line-height: 1.5;
+    border-bottom: 3px solid $color-gray10;
+    .icon {
+        width: 1em;
+        height: 1em;
+        font-size: 2.5rem;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    @include media-down(sp) {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// Pagination style
+// -----------------------------------------------------------------------------
+
+.pagerPagination {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+
+    a {
+        border: 1px solid $color-gray03;
+        color: $color-bg01;
+        font-size: 16px;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 8px 14px;
+        text-decoration: none;
+        transition: all .2s;
+
+        &:hover {
+            &:not(.active) {
+                background-color: $color-bg01;
+                color: $color-white;
+            }
+        }
+    }
+
+    a.active {
+        background-color: $color-bg01;
+        color: white;
+    }
+
+    @include media-down(sp) {
+        display: none;
+    }
+}
+
+.pagerPaginationSP {
+    display: none;
+    color: $color-bg01;
+    font-size: 1.3rem;
+
+    @include media-down(sp) {
+        display: initial;
+    }
+}
+
+.splide__pagination {
+    display: none !important;
+}
+
+.ctPagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
+    background-color: $color-gray05;
+    color: $color-white;
+    span {
+        font-size: 1.6rem;
+        margin-left: 2px;
+        line-height: 1;
+    }
+    .text {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    @include media-down(sp) {
+        margin-top: 3px;
+        height: 35px;
+        span {
+            font-size: 1.2rem;
+        }
+        .text {
+            margin-right: 9px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// Tab style
+// -----------------------------------------------------------------------------
+.tabBox {
+    display: none;
+
+    .toggleDisplay {
+        transform: translateY(-84px);
+        max-width: 50%;
+        margin-left: auto;
+
+        .rbCustom {
+            margin-left: 2.2vw;
+        }
+    }
+
+    @include media-down(1120) {
+        .toggleDisplay {
+            transform: translateY(0);
+            max-width: initial;
+
+            .rbCustom {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+#tab01 {
+    display: block;
+}

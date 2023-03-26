@@ -1,0 +1,107 @@
+@charset "utf-8";
+.inputContainer {
+	position:relative;
+	float:left;
+}
+.formError {
+	display:block;
+	position:absolute;
+	top:300px;
+	left:300px;
+	z-index:5000;
+	padding-bottom:13px;
+	cursor:pointer;
+	opacity:1 !important;
+}
+#debugMode {
+	display:block;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100000;
+	overflow:scroll;
+	opacity:0.8;
+	width:100%;
+	height:200px;
+	padding:10px;
+	background:#000;
+	color:#FFF;
+	font-size:14px;
+}
+.ajaxSubmit {
+	display:none;
+	padding:20px;
+	border:1px solid #999;
+	background:#55EA55;
+}
+.formError .formErrorContent {
+   	padding: 10px;
+    border-radius: 5px;
+    background: #f94a4a;
+    color: #FFF;
+    font-size: 14px;
+    box-shadow: 0px -1px 2px 0px #676767;
+    font-weight:bold;
+
+}
+.greenPopup .formErrorContent { background:#33BE40; }
+.blackPopup .formErrorContent {
+	background:#393939;
+	color:#FFF;
+}
+.formError .formErrorArrow {
+	z-index:5001;
+	width:15px;
+	margin:-2px 0 0 13px;
+}
+.formError .formErrorArrowBottom {
+	top:0;
+	margin:-6px;
+}
+.formError .formErrorArrow div {
+	display: block;
+    height: 1px;
+    margin: 0 auto;
+    background: #f94a4a;
+    font-size: 0;
+    line-height: 0px;
+}
+.formError .formErrorArrowBottom div {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+}
+.greenPopup .formErrorArrow div { background:#33be40; }
+.blackPopup .formErrorArrow div {
+	background:#393939;
+	color:#FFF;
+}
+.formError .formErrorArrow .line10 {
+	width:15px;
+	border:none;
+}
+.formError .formErrorArrow .line9 {
+	width:13px;
+	border:none;
+}
+.formError .formErrorArrow .line8 { width:11px; }
+.formError .formErrorArrow .line7 { width:9px; }
+.formError .formErrorArrow .line6 { width:7px; }
+.formError .formErrorArrow .line5 { width:5px; }
+.formError .formErrorArrow .line4 { width:3px; }
+.formError .formErrorArrow .line3 {
+	width:1px;
+	border-left:2px solid #DDD;
+	border-right:2px solid #DDD;
+	border-bottom:0px solid #DDD;
+}
+.formError .formErrorArrow .line2 {
+	width:3px;
+	border:none;
+	background:#DDD;
+}
+.formError .formErrorArrow .line1 {
+	width:1px;
+	border:none;
+	background:#DDD;
+}

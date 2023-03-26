@@ -1,0 +1,216 @@
+// -----------------------------------------------------------------------------
+// Chart Compare
+// -----------------------------------------------------------------------------
+.groupChartCompare {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px -30px;
+
+    .chartCompare {
+        width: calc(25% - 30px);
+        margin: 0 15px 30px 15px;
+    }
+}
+
+.chartCompare {
+    .head {
+        padding: 14px 10px;
+        border-top: 3px solid $color-gray10;
+        border-bottom: 1px solid $color-gray10;
+        border-left: 1px solid $color-gray10;
+        border-right: 1px solid $color-gray10;
+        background-color: $color-white;
+    }
+
+    .ttl {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .contentBox {
+        display: flex;
+        padding: 30px 15px 20px;
+        background-color: #EDEDED;
+        border-left: 1px solid $color-gray10;
+        border-right: 1px solid $color-gray10;
+        border-bottom: 1px solid $color-gray10;
+    }
+
+    .listPer {
+        position: relative;
+        top: -4px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        width: 28px;
+        height: 347px;        
+        min-width: 28px;
+
+        li {
+            position: relative;
+            padding-right: 10px;
+            font-family: $font-Barlow;
+            font-size: 1.4rem;
+            line-height: 1;
+            font-weight: 500;
+            font-style: italic;
+            text-align: right;
+        }
+    }
+
+    .graph {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        height: 335px;
+        border-left: 1px solid $color-gray02;
+        border-bottom: 1px solid $color-gray02;
+        background: #FFF url(#{$base-url}img/svg/bg_chart_compare.svg) repeat-x 50% 50%;
+        background-size: contain;
+
+        &::after {
+            position: absolute;
+            left: -4px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            height: 100%;
+            background: url(#{$base-url}img/svg/bg_chart_compare_2.svg) no-repeat 0 50%;
+            background-size: contain;
+            content: '';
+        }
+    }
+
+    .team {
+        display: flex;
+        align-items: flex-end;
+        width: calc((100% - 15px) / 4);
+        min-width: 50px;
+        margin: 0 5px;
+
+        &1 {
+            @extend .team;
+            background-color: $color-bg03;
+            border-top: 1px solid #541F6C;
+        }
+
+        &2 {
+            @extend .team;
+            background-color: $color-green09;
+            border-top: 1px solid #13703A;
+        }
+    }
+
+    .percent {
+        display: flex;
+        align-items: baseline;
+        margin: 0 auto 11px;
+        font-family: $font-Barlow2;
+        font-weight: 500;
+        line-height: 1;
+        color: $color-white;
+
+        .num {
+            font-size: 2rem;
+        }
+
+        .sub {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@include media-down(md) {
+    .groupChartCompare {
+        margin: 0 -15px -30px;
+    
+        .chartCompare {
+            width: calc(50% - 30px);
+        }
+    }
+}
+
+@include media-down(sp) {
+    .groupChartCompare {
+        margin: 0 -5px 0;
+    
+        .chartCompare {
+            width: calc(50% - 10px);
+            margin: 0 5px 10px 5px;
+        }
+    }
+
+    .chartCompare {
+        .head {
+            padding: 8px 5px;
+            border-top: 2px solid #CCC;
+        }
+
+        .ttl {
+            font-size: 1.4rem;
+        }
+
+        .contentBox {
+            padding: 20px 10px 12px;
+        }
+
+        .listPer {
+            top: -6px;
+            width: 25px;
+            min-width: 25px;
+    
+            li {
+                padding-right: 7px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .team {
+            min-width: 45px;
+            margin: 0 2px;
+        }
+
+        .percent {
+            margin-bottom: 5px;
+
+            .num {
+                font-size: 1.8rem;
+            }
+
+            .sub {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+@include media-down(374) {
+    .groupChartCompare {
+        margin: 0;
+    
+        .chartCompare {
+            width: 100%;
+            margin: 0 0 15px 0;
+        }
+    }
+}
+@media print {
+    .groupChartCompare {
+        margin: 0 -10px -20px;
+        .chartCompare {
+            width: calc(25% - 20px);
+            margin: 0 10px 20px 10px;
+            .contentBox {
+                padding: 20px 15px 10px 10px;
+            }
+        }
+
+    }
+}
